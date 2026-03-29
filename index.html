@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruiyang Ma | Economist</title>
+  <meta name="description" content="Personal academic website of Ruiyang Ma, Ph.D. Candidate in Economics at UIUC. Research in Macro Finance and Monetary Economics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">RM</a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#teaching" class="nav-link">Teaching</a></li>
+        <li><a href="#cv" class="nav-link nav-cta">CV</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Ph.D. Candidate · Economics
+      </div>
+      <h1 class="hero-name">Ruiyang Ma</h1>
+      <p class="hero-subtitle">University of Illinois at Urbana-Champaign</p>
+      <div class="hero-tags">
+        <span class="tag">Macro Finance</span>
+        <span class="tag">Monetary Economics</span>
+        <span class="tag">New Keynesian Economics</span>
+        <span class="tag">Networks</span>
+        <span class="tag">Financial Frictions</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#research" class="btn btn-primary">View Research</a>
+        <a href="#about" class="btn btn-secondary">About Me</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// about</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo-wrapper">
+          <div class="photo-placeholder">
+            <span>RM</span>
+          </div>
+          <div class="about-contact">
+            <a href="mailto:rma13@illinois.edu" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              rma13@illinois.edu
+            </a>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="about-intro">
+            I am a Ph.D. candidate in Economics at the University of Illinois at Urbana-Champaign. My research sits at the intersection of <strong>macroeconomics</strong> and <strong>finance</strong>, with a focus on how monetary policy transmits through the financial system.
+          </p>
+          <p>
+            I study questions related to monetary transmission mechanisms, financial networks, interbank markets, and the role of financial frictions in shaping real economic outcomes. I combine structural macroeconomic modeling with modern empirical identification strategies — including machine learning and large language models — to disentangle causal effects in macro data.
+          </p>
+          <div class="about-fields">
+            <div class="field-item">
+              <span class="field-label">Primary Fields</span>
+              <span class="field-value">Macro Finance · Monetary Economics</span>
+            </div>
+            <div class="field-item">
+              <span class="field-label">Topics</span>
+              <span class="field-value">Monetary Transmission · Networks · Financial Frictions · Identification in Macroeconomics</span>
+            </div>
+            <div class="field-item">
+              <span class="field-label">Award</span>
+              <span class="field-value">Hung-Chao and Julia Tai Family Fellowship (2025)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// research</span>
+        <h2 class="section-title">Working Papers</h2>
+      </div>
+      <div class="papers-list">
+
+        <article class="paper-card">
+          <div class="paper-number">01</div>
+          <div class="paper-content">
+            <div class="paper-status">Work in Progress</div>
+            <h3 class="paper-title">The Financial Reallocation Channel of Monetary Policy</h3>
+            <p class="paper-coauthors">with <span>Junze Lin</span></p>
+            <p class="paper-abstract">
+              Examines how monetary policy reallocates financial resources across firms and sectors through the banking system, with implications for aggregate investment and output dynamics.
+            </p>
+          </div>
+          <div class="paper-glow"></div>
+        </article>
+
+        <article class="paper-card">
+          <div class="paper-number">02</div>
+          <div class="paper-content">
+            <div class="paper-status">Work in Progress</div>
+            <h3 class="paper-title">Decomposing Information Effects and Monetary Policy Shocks: An LLM Approach</h3>
+            <p class="paper-coauthors">with <span>Jing Cynthia Wu</span> and <span>Shihan Xie</span></p>
+            <p class="paper-abstract">
+              Develops a novel identification strategy using large language models to separate the information effects of central bank communication from pure monetary policy shocks, improving causal inference in high-frequency settings.
+            </p>
+          </div>
+          <div class="paper-glow"></div>
+        </article>
+
+        <article class="paper-card">
+          <div class="paper-number">03</div>
+          <div class="paper-content">
+            <div class="paper-status">Work in Progress</div>
+            <h3 class="paper-title">The Financial Reallocation Channel: How Interbank Networks Shape Spatial Misallocation</h3>
+            <p class="paper-coauthors">with <span>Ke Gao</span> and <span>Hongrui Pu</span></p>
+            <p class="paper-abstract">
+              Investigates how the topology of interbank lending networks amplifies or mitigates spatial misallocation of capital, with implications for regional heterogeneity in monetary policy transmission.
+            </p>
+          </div>
+          <div class="paper-glow"></div>
+        </article>
+
+        <article class="paper-card">
+          <div class="paper-number">04</div>
+          <div class="paper-content">
+            <div class="paper-status">Work in Progress</div>
+            <h3 class="paper-title">Pricing the Risk Lock-in: Financial Frictions, Endogenous Production Networks, and Corporate Bond Spreads</h3>
+            <p class="paper-coauthors">with <span>Shaoqing Pan</span> and <span>Rong Yuwen</span></p>
+            <p class="paper-abstract">
+              Builds a model in which financial frictions induce risk lock-in along endogenous production networks, generating time-varying corporate bond spreads consistent with empirical evidence.
+            </p>
+          </div>
+          <div class="paper-glow"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Section -->
+  <section id="teaching">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// teaching</span>
+        <h2 class="section-title">Teaching Experience</h2>
+      </div>
+      <p class="teaching-institution">University of Illinois at Urbana-Champaign</p>
+      <div class="teaching-table-wrapper">
+        <table class="teaching-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Level</th>
+              <th>Role</th>
+              <th>Terms</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Intermediate Macroeconomics</td>
+              <td><span class="level-badge ug">UG</span></td>
+              <td><span class="role-badge head">Head Teaching Assistant</span></td>
+              <td>FA25</td>
+            </tr>
+            <tr>
+              <td>Microeconomics Principles</td>
+              <td><span class="level-badge ug">UG</span></td>
+              <td><span class="role-badge ta">Teaching Assistant</span></td>
+              <td>SP26, SP25, FA24</td>
+            </tr>
+            <tr>
+              <td>Macroeconomics II</td>
+              <td><span class="level-badge phd">PhD</span></td>
+              <td><span class="role-badge ta">Teaching Assistant</span></td>
+              <td>SP24</td>
+            </tr>
+            <tr>
+              <td>Intermediate Macroeconomics</td>
+              <td><span class="level-badge ug">UG</span></td>
+              <td><span class="role-badge ta">Teaching Assistant</span></td>
+              <td>FA23</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Section -->
+  <section id="cv">
+    <div class="container">
+      <div class="cv-card">
+        <div class="cv-card-bg"></div>
+        <div class="cv-card-content">
+          <span class="section-label">// curriculum vitae</span>
+          <h2 class="cv-title">Download My CV</h2>
+          <p class="cv-desc">Full academic curriculum vitae including education, research, teaching, and awards.</p>
+          <a href="assets/rm_cv_v2.pdf" download class="btn btn-primary btn-large">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV (PDF)
+          </a>
+          <p class="cv-updated">Last updated: March 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-name">Ruiyang Ma</span>
+          <span class="footer-role">Ph.D. Candidate in Economics · UIUC</span>
+        </div>
+        <div class="footer-right">
+          <a href="mailto:rma13@illinois.edu" class="footer-link">rma13@illinois.edu</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Ruiyang Ma. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
