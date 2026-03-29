@@ -1,5 +1,6 @@
 /* ============================================================
    Particle Network Background
+   Hub-and-Spoke topology + Pulse propagation + Time-varying edges
    ============================================================ */
 (function initParticles() {
   const canvas = document.getElementById('particleCanvas');
@@ -7,17 +8,24 @@
   const ctx = canvas.getContext('2d');
 
   const CONFIG = {
-    particleCount: 70,
-    maxDistance: 140,
-    speed: 0.35,
-    particleRadius: 1.8,
-    lineOpacityMax: 0.18,
-    colorBlue: '37, 99, 235',
-    colorCyan: '2, 132, 199',
+    hubCount:        4,      // number of hub (systemically important) nodes
+    satelliteCount:  55,     // regular satellite nodes
+    hubRadius:       7,      // hub node visual radius
+    nodeRadius:      1.8,    // satellite node visual radius
+    hubMaxDist:      220,    // hubs connect over longer distances
+    satMaxDist:      130,    // satellite connection distance
+    speed:           0.28,
+    hubSpeed:        0.12,   // hubs move slowly
+    colorBlue:       '37, 99, 235',
+    colorCyan:       '2, 132, 199',
+    pulseInterval:   3200,   // ms between pulses
+    pulseSpeed:      2.2,    // propagation speed
+    pulseMaxRadius:  260,
   };
 
-  let W, H, particles = [], animId;
-  let mouse = { x: null, y: null, radius: 160 };
+  let W, H, nodes = [], pulses = [], animId, lastPulseTime = 0;
+  let mouse = { x: null, y: null, radius: 170 };
+  let tick = 0;
 
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
@@ -26,107 +34,213 @@
 
   function rand(min, max) { return Math.random() * (max - min) + min; }
 
-  class Particle {
-    constructor() { this.reset(true); }
+  /* ---- Node class (shared by hubs and satellites) ---- */
+  class Node {
+    constructor(isHub, index) {
+      this.isHub  = isHub;
+      this.index  = index;
+      this.color  = isHub ? CONFIG.colorBlue : (Math.random() > 0.45 ? CONFIG.colorBlue : CONFIG.colorCyan);
+      this.baseAlpha = isHub ? 0.75 : rand(0.2, 0.45);
+      this.alpha  = this.baseAlpha;
+      this.r      = isHub ? CONFIG.hubRadius : rand(1.2, CONFIG.nodeRadius);
+      this.pulse  = 0;   // 0–1 flash intensity from incoming pulse
+      this.reset(true);
+    }
 
     reset(initial) {
+      const spd = this.isHub ? CONFIG.hubSpeed : CONFIG.speed;
       this.x  = rand(0, W);
       this.y  = initial ? rand(0, H) : (Math.random() < 0.5 ? -5 : H + 5);
-      this.vx = rand(-CONFIG.speed, CONFIG.speed);
-      this.vy = rand(-CONFIG.speed, CONFIG.speed);
-      this.r  = rand(1, CONFIG.particleRadius);
-      this.alpha = rand(0.2, 0.5);
-      this.color = Math.random() > 0.5 ? CONFIG.colorBlue : CONFIG.colorCyan;
+      this.vx = rand(-spd, spd);
+      this.vy = rand(-spd, spd);
     }
 
     update() {
+      /* mouse repulsion */
       if (mouse.x !== null) {
         const dx = this.x - mouse.x;
         const dy = this.y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < mouse.radius) {
           const force = (mouse.radius - dist) / mouse.radius;
-          this.vx += (dx / dist) * force * 0.4;
-          this.vy += (dy / dist) * force * 0.4;
+          this.vx += (dx / dist) * force * (this.isHub ? 0.15 : 0.4);
+          this.vy += (dy / dist) * force * (this.isHub ? 0.15 : 0.4);
         }
       }
 
-      const maxSpeed = CONFIG.speed * 3;
+      const maxSpd = (this.isHub ? CONFIG.hubSpeed : CONFIG.speed) * 3;
       const spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-      if (spd > maxSpeed) {
-        this.vx = (this.vx / spd) * maxSpeed;
-        this.vy = (this.vy / spd) * maxSpeed;
-      }
+      if (spd > maxSpd) { this.vx = (this.vx / spd) * maxSpd; this.vy = (this.vy / spd) * maxSpd; }
 
-      this.vx *= 0.995;
-      this.vy *= 0.995;
-
-      this.x += this.vx;
-      this.y += this.vy;
+      const damp = this.isHub ? 0.998 : 0.995;
+      this.vx *= damp; this.vy *= damp;
+      this.x  += this.vx; this.y  += this.vy;
 
       if (this.x < -10) this.x = W + 10;
       if (this.x > W + 10) this.x = -10;
       if (this.y < -10) this.y = H + 10;
       if (this.y > H + 10) this.y = -10;
+
+      /* decay pulse flash */
+      if (this.pulse > 0) this.pulse = Math.max(0, this.pulse - 0.025);
     }
 
     draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
-      ctx.fill();
-    }
-  }
+      const flash  = this.pulse;
+      const alpha  = this.baseAlpha + flash * 0.55;
+      const radius = this.r + flash * (this.isHub ? 4 : 2.5);
 
-  function buildParticles() {
-    particles = [];
-    for (let i = 0; i < CONFIG.particleCount; i++) {
-      particles.push(new Particle());
-    }
-  }
+      if (this.isHub) {
+        /* outer glow ring */
+        const glow = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, radius * 3.5);
+        glow.addColorStop(0,   `rgba(${this.color}, ${0.18 + flash * 0.25})`);
+        glow.addColorStop(0.5, `rgba(${this.color}, ${0.06 + flash * 0.1})`);
+        glow.addColorStop(1,   `rgba(${this.color}, 0)`);
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, radius * 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = glow;
+        ctx.fill();
 
-  function drawLines() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const a = particles[i];
-        const b = particles[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < CONFIG.maxDistance) {
-          const opacity = (1 - dist / CONFIG.maxDistance) * CONFIG.lineOpacityMax;
-          const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
-          grad.addColorStop(0, `rgba(${a.color}, ${opacity})`);
-          grad.addColorStop(1, `rgba(${b.color}, ${opacity})`);
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = grad;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
+        /* core dot */
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.color}, ${alpha})`;
+        ctx.fill();
+
+        /* pulsing ring on hubs */
+        const ringPhase = (tick * 0.018 + this.index * 1.4) % (Math.PI * 2);
+        const ringR = radius + 3 + Math.sin(ringPhase) * 3;
+        const ringAlpha = (0.08 + flash * 0.15) * (0.5 + 0.5 * Math.sin(ringPhase));
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, ringR, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${this.color}, ${ringAlpha})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      } else {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.color}, ${alpha})`;
+        ctx.fill();
       }
     }
   }
 
-  function loop() {
+  /* ---- Pulse class ---- */
+  class Pulse {
+    constructor(originNode) {
+      this.ox    = originNode.x;
+      this.oy    = originNode.y;
+      this.r     = 0;
+      this.alive = true;
+      this.hit   = new Set();
+      this.hit.add(originNode.index);
+      originNode.pulse = 1;
+    }
+
+    update() {
+      this.r += CONFIG.pulseSpeed;
+      if (this.r > CONFIG.pulseMaxRadius) { this.alive = false; return; }
+
+      /* check if pulse front reaches any node */
+      nodes.forEach(n => {
+        if (this.hit.has(n.index)) return;
+        const dx = n.x - this.ox;
+        const dy = n.y - this.oy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const front = this.r;
+        if (Math.abs(dist - front) < CONFIG.pulseSpeed * 1.5) {
+          this.hit.add(n.index);
+          n.pulse = 0.85;
+        }
+      });
+    }
+
+    draw() {
+      const progress = this.r / CONFIG.pulseMaxRadius;
+      const alpha    = (1 - progress) * 0.22;
+      ctx.beginPath();
+      ctx.arc(this.ox, this.oy, this.r, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(${CONFIG.colorBlue}, ${alpha})`;
+      ctx.lineWidth   = 1.2;
+      ctx.stroke();
+    }
+  }
+
+  /* ---- Build nodes ---- */
+  function buildNodes() {
+    nodes  = [];
+    pulses = [];
+    for (let i = 0; i < CONFIG.hubCount; i++)       nodes.push(new Node(true,  i));
+    for (let i = 0; i < CONFIG.satelliteCount; i++) nodes.push(new Node(false, CONFIG.hubCount + i));
+  }
+
+  /* ---- Draw edges with time-varying opacity ---- */
+  function drawEdges() {
+    const breathe = 0.5 + 0.5 * Math.sin(tick * 0.012); // 0–1 slow oscillation
+
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a   = nodes[i];
+        const b   = nodes[j];
+        const dx  = a.x - b.x;
+        const dy  = a.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const maxD = (a.isHub || b.isHub) ? CONFIG.hubMaxDist : CONFIG.satMaxDist;
+
+        if (dist > maxD) continue;
+
+        const baseFade  = 1 - dist / maxD;
+        const flashBoost = (a.pulse + b.pulse) * 0.3;
+        const timeVar   = (a.isHub || b.isHub) ? 0.22 : 0.12 + breathe * 0.06;
+        const opacity   = baseFade * (timeVar + flashBoost);
+        const lineW     = (a.isHub || b.isHub) ? 1.2 + flashBoost * 2 : 0.7 + flashBoost;
+
+        const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+        grad.addColorStop(0, `rgba(${a.color}, ${opacity})`);
+        grad.addColorStop(1, `rgba(${b.color}, ${opacity})`);
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth   = lineW;
+        ctx.stroke();
+      }
+    }
+  }
+
+  /* ---- Main loop ---- */
+  function loop(timestamp) {
+    tick++;
     ctx.clearRect(0, 0, W, H);
-    drawLines();
-    particles.forEach(p => { p.update(); p.draw(); });
+
+    /* trigger new pulse from a random hub */
+    if (timestamp - lastPulseTime > CONFIG.pulseInterval) {
+      const hub = nodes[Math.floor(Math.random() * CONFIG.hubCount)];
+      pulses.push(new Pulse(hub));
+      lastPulseTime = timestamp;
+    }
+
+    /* update & draw pulses */
+    pulses = pulses.filter(p => p.alive);
+    pulses.forEach(p => { p.update(); p.draw(); });
+
+    drawEdges();
+    nodes.forEach(n => { n.update(); n.draw(); });
+
     animId = requestAnimationFrame(loop);
   }
 
   function init() {
     resize();
-    buildParticles();
-    loop();
+    buildNodes();
+    requestAnimationFrame(loop);
   }
 
   window.addEventListener('resize', () => {
     cancelAnimationFrame(animId);
     resize();
-    buildParticles();
-    loop();
+    buildNodes();
+    requestAnimationFrame(loop);
   });
 
   const hero = document.getElementById('hero');
@@ -136,10 +250,7 @@
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
     });
-    hero.addEventListener('mouseleave', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
+    hero.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
   }
 
   init();
