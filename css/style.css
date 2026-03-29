@@ -304,7 +304,7 @@ section {
 }
 
 .hero-name {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.05;
@@ -927,7 +927,7 @@ section {
 
   .photo-placeholder {
     width: 100px;
-    height: 100px;
+    height: auto;
     font-size: 1.3rem;
     flex-shrink: 0;
   }
@@ -954,5 +954,5 @@ section {
 
 @media (max-width: 480px) {
   .container { padding: 0 1.25rem; }
-  .hero-name { font-size: 2.8rem; }
+  .hero-name { font-size: 2rem; }
 }
