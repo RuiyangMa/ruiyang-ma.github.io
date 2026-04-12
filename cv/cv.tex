@@ -44,12 +44,12 @@
 \setlength{\tabcolsep}{0pt}
 
 %% ---- Section heading ----------------------------------------
-% Prints: SECTION TITLE with a thin colored rule below
 \newcommand{\cvsection}[1]{%
   \vspace{14pt}%
-  {\color{accent}\rule{\linewidth}{1.8pt}}\\[-6pt]
   {\large\bfseries\color{accent} #1}%
-  \vspace{5pt}%
+  \vspace{3pt}\par%
+  {\color{muted}\rule{\linewidth}{0.4pt}}%
+  \vspace{4pt}%
 }
 
 %% ---- Dated entry: \entry{DATE}{BODY} -----------------------
@@ -58,7 +58,7 @@
 \setlength{\datecol}{1.55in}
 \newcommand{\entry}[2]{%
   \begin{tabular}{@{}p{\datecol}@{\hspace{6pt}}p{\linewidth-\datecol-6pt}@{}}
-    \raggedleft\small\color{muted} #1 &
+    \raggedright\small\color{muted} #1 &
     \raggedright #2 \\
   \end{tabular}%
   \vspace{3pt}%
@@ -139,8 +139,8 @@
 %% Paper 01
 \begin{paperentry}
   \textbf{The Financial Reallocation Channel of Monetary Policy}
-  \hfill{\small\itshape\color{muted}Work in Progress}\\[2pt]
-  {\small\color{muted}with Junze Lin}\\[5pt]
+  \hfill{\small\itshape\color{muted}(Work in Progress)}\\[2pt]
+  {\small with Junze Lin}\\[5pt]
   We embed a bank dependency network---a matrix whose entries measure the marginal
   impact of one bank's fundamentals on another's market value---into a New Keynesian
   model with heterogeneous households. The network generates heterogeneous bank
@@ -160,8 +160,8 @@
 \begin{paperentry}
   \textbf{The Financial Reallocation Channel: How Interbank Networks Shape Spatial
   Misallocation}
-  \hfill{\small\itshape\color{muted}Work in Progress}\\[2pt]
-  {\small\color{muted}with Ke Gao and Hongrui Pu}\\[5pt]
+  \hfill{\small\itshape\color{muted}(Work in Progress)}\\[2pt]
+  {\small with Ke Gao and Hongrui Pu}\\[5pt]
   We propose that the topology of interbank networks shapes spatial allocative
   efficiency through a financial reallocation channel. Banks with high
   self-amplification centrality face greater systemic risk exposure, leading them to
@@ -181,8 +181,8 @@
 \begin{paperentry}
   \textbf{Pricing the Risk Lock-in: Financial Frictions, Endogenous Production
   Networks, and Corporate Bond Spreads}
-  \hfill{\small\itshape\color{muted}Work in Progress}\\[2pt]
-  {\small\color{muted}with Shaoqing Pan and Rong Yuwen}\\[5pt]
+  \hfill{\small\itshape\color{muted}(Work in Progress)}\\[2pt]
+  {\small with Shaoqing Pan and Rong Yuwen}\\[5pt]
   This research proposes to investigate how financial frictions distort firm-level
   supply chain adjustments and the resulting credit risk pricing. We develop a
   theoretical framework to identify a ``risk lock-in'' mechanism, where firms facing
