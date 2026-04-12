@@ -14,7 +14,7 @@
 | Institution | University of Illinois at Urbana-Champaign |
 | Photo | `assets/photo.jpg` |
 | CV file | `assets/cv.pdf` (compiled from `cv/cv.tex`) |
-| CV last updated | March 28, 2026 |
+| CV last updated | April 12, 2026 |
 
 ---
 
@@ -136,9 +136,9 @@ I study questions related to monetary transmission mechanisms, financial network
 | 2026-03-28 | Added profile photo |
 | 2026-03-28 | Enhanced particle network animation |
 | 2026-03-28 | Generated LaTeX CV (cv.tex) from CONTENT.md |
-| 2026-03-28 | CV: fixed full page width usage |
-| 2026-03-28 | CV: education school name in small muted color |
-| 2026-03-28 | CV: finalized accent color as deep burgundy |
-| 2026-03-28 | CV: upgraded font to EB Garamond, abstract text smaller, awards cleanup |
-| 2026-03-28 | CV: font size 12pt, updated date moved to footer |
-| 2026-03-28 | Website: CV last updated synced to March 2026 |
+| 2026-04-12 | CV: fixed full page width usage |
+| 2026-04-12 | CV: education school name in small muted color |
+| 2026-04-12 | CV: finalized accent color as deep burgundy |
+| 2026-04-12 | CV: upgraded font to EB Garamond, abstract text smaller, awards cleanup |
+| 2026-04-12 | CV: font size 12pt, updated date moved to footer |
+| 2026-04-12 | Website: CV last updated synced to April 2026 |
