@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  12 APR 2026 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  12 APR 2026 16:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (D:\miketex\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(D:\miketex\tex/latex/base\size11.clo
-File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(D:\miketex\tex/latex/base\size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
 \c@section=\count276
@@ -310,38 +310,57 @@ Package: fontawesome5-generic-helper 2022/05/02 v5.15.4 non-uTeX helper for fon
 tawesome5
 
 (D:\miketex\tex/latex/fontawesome5\fontawesome5-mapping.def)))
-Package hyperref Info: Option `colorlinks' set `true' on input line 31.
-\labelcol=\skip57
+(D:\miketex\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip57
+\f@nch@offset@elh=\skip58
+\f@nch@offset@erh=\skip59
+\f@nch@offset@olh=\skip60
+\f@nch@offset@orh=\skip61
+\f@nch@offset@elf=\skip62
+\f@nch@offset@erf=\skip63
+\f@nch@offset@olf=\skip64
+\f@nch@offset@orf=\skip65
+\f@nch@height=\skip66
+\f@nch@footalignment=\skip67
+\f@nch@widthL=\skip68
+\f@nch@widthC=\skip69
+\f@nch@widthR=\skip70
+\@temptokenb=\toks26
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 32.
+\labelcol=\skip71
 LaTeX Font Info:    Trying to load font information for T1+EBGaramond-OsF on in
-put line 91.
+put line 98.
 
 (D:\miketex\tex/latex/ebgaramond\t1ebgaramond-osf.fd
 File: T1EBGaramond-OsF.fd 2023/03/19 (autoinst) Font definitions for T1/EBGaram
 ond-OsF.
 )
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 91.
+(Font)              scaled to size 12.0pt on input line 98.
  (cv.aux)
 \openout1 = `cv.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 \c@mv@tabular=\count307
 \c@mv@boldtabular=\count308
 
@@ -364,12 +383,12 @@ LaTeX Font Info:    ... okay on input line 91.
 * \topmargin=-55.06749pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
+* \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -386,25 +405,25 @@ LaTeX Font Info:    ... okay on input line 91.
 \scratchbox=\box55
 \nofMPsegments=\count310
 \nofMParguments=\count311
-\everyMPshowfont=\toks26
+\everyMPshowfont=\toks27
 \MPscratchCnt=\count312
 \MPscratchDim=\dimen166
 \MPnumerator=\count313
 \makeMPintoPDFobject=\count314
-\everyMPtoPDFconversion=\toks27
+\everyMPtoPDFconversion=\toks28
 )
-Package hyperref Info: Link coloring ON on input line 91.
+Package hyperref Info: Link coloring ON on input line 98.
  (cv.out) (cv.out)
 \@outlinefile=\write3
 \openout3 = `cv.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 91.
-Package microtype Info: Applying patch `item' on input line 91.
-Package microtype Info: Applying patch `toc' on input line 91.
-Package microtype Info: Applying patch `eqnum' on input line 91.
-Package microtype Info: Applying patch `footnote' on input line 91.
-Package microtype Info: Applying patch `verbatim' on input line 91.
-LaTeX Info: Redefining \microtypesetup on input line 91.
+LaTeX Info: Redefining \microtypecontext on input line 98.
+Package microtype Info: Applying patch `item' on input line 98.
+Package microtype Info: Applying patch `toc' on input line 98.
+Package microtype Info: Applying patch `eqnum' on input line 98.
+Package microtype Info: Applying patch `footnote' on input line 98.
+Package microtype Info: Applying patch `verbatim' on input line 98.
+LaTeX Info: Redefining \microtypesetup on input line 98.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -420,54 +439,54 @@ File: mt-EBGaramond.cfg 2021/10/25 v2.0 microtype config. file: EB Garamond / A
 dobe Garamond (RS)
 )
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 26.0pt on input line 97.
+(Font)              scaled to size 26.0pt on input line 103.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' will be
-(Font)              scaled to size 26.0pt on input line 97.
+(Font)              scaled to size 26.0pt on input line 103.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 99.
+nput line 105.
 
 (D:\miketex\tex/latex/fontawesome5\ufontawesomefree1.fd)
 LaTeX Font Info:    Trying to load font information for TS1+EBGaramond-OsF on i
-nput line 101.
+nput line 107.
 
 (D:\miketex\tex/latex/ebgaramond\ts1ebgaramond-osf.fd
 File: TS1EBGaramond-OsF.fd 2023/03/19 (autoinst) Font definitions for TS1/EBGar
 amond-OsF.
 )
 LaTeX Font Info:    Font shape `TS1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 101.
+(Font)              scaled to size 12.0pt on input line 107.
 Package microtype Info: Character `textthreeoldstyle ' is missing
-(microtype)             in font `TS1/EBGaramond-OsF/m/n/10.95'.
+(microtype)             in font `TS1/EBGaramond-OsF/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textfouroldstyle ' is missing
-(microtype)             in font `TS1/EBGaramond-OsF/m/n/10.95'.
+(microtype)             in font `TS1/EBGaramond-OsF/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textsevenoldstyle ' is missing
-(microtype)             in font `TS1/EBGaramond-OsF/m/n/10.95'.
+(microtype)             in font `TS1/EBGaramond-OsF/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textlbrackdbl ' is missing
-(microtype)             in font `TS1/EBGaramond-OsF/m/n/10.95'.
+(microtype)             in font `TS1/EBGaramond-OsF/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `textrbrackdbl ' is missing
-(microtype)             in font `TS1/EBGaramond-OsF/m/n/10.95'.
+(microtype)             in font `TS1/EBGaramond-OsF/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `texttildelow ' is missing
-(microtype)             in font `TS1/EBGaramond-OsF/m/n/10.95'.
+(microtype)             in font `TS1/EBGaramond-OsF/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 106.
+(Font)              scaled to size 10.95pt on input line 112.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on i
-nput line 107.
+nput line 113.
 
 (D:\miketex\tex/latex/fontawesome5\ufontawesomefree3.fd)
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 114.
+(Font)              scaled to size 14.4pt on input line 120.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 114.
+(Font)              scaled to size 14.4pt on input line 120.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 116.
+(Font)              scaled to size 10.95pt on input line 122.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 129.
+(Font)              scaled to size 12.0pt on input line 135.
  [1
 
 {C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/miketex/fo
@@ -479,13 +498,13 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 230.
+(Font)              <12> on input line 236.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 230.
+(Font)              <8> on input line 236.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 230.
+(Font)              <6> on input line 236.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 230.
+(Font)              scaled to size 8.0pt on input line 236.
  [2] (cv.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -495,19 +514,19 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15702 strings out of 467870
- 274763 string characters out of 5434709
- 748598 words of memory out of 5000000
- 44301 multiletter control sequences out of 15000+600000
- 703202 words of font info for 131 fonts, out of 8000000 for 9000
+ 16042 strings out of 467870
+ 280713 string characters out of 5434709
+ 756574 words of memory out of 5000000
+ 44644 multiletter control sequences out of 15000+600000
+ 702426 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,1001b,482s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1001b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <D:/miketex/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><D:/miketex/fon
 ts/type1/public/ebgaramond/EBGaramond-Italic.pfb><D:/miketex/fonts/type1/public
 /ebgaramond/EBGaramond-Regular.pfb><D:/miketex/fonts/type1/public/fontawesome5/
 FontAwesome5Free-Regular.pfb><D:/miketex/fonts/type1/public/fontawesome5/FontAw
 esome5Free-Solid.pfb>
-Output written on cv.pdf (2 pages, 102347 bytes).
+Output written on cv.pdf (2 pages, 102442 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  3 named destinations out of 1000 (max. 500000)
