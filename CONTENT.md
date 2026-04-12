@@ -131,7 +131,14 @@ I study questions related to monetary transmission mechanisms, financial network
 
 | Date | Change |
 |------|--------|
-| 2026-03-29 | Initial website launch |
-| 2026-03-29 | Updated CV to rm_cv_260328.pdf, added paper abstracts |
-| 2026-03-29 | Added profile photo |
-| 2026-03-29 | Enhanced particle network animation |
+| 2026-03-28 | Initial website launch |
+| 2026-03-28 | Updated CV to rm_cv_260328.pdf, added paper abstracts |
+| 2026-03-28 | Added profile photo |
+| 2026-03-28 | Enhanced particle network animation |
+| 2026-03-28 | Generated LaTeX CV (cv.tex) from CONTENT.md |
+| 2026-03-28 | CV: fixed full page width usage |
+| 2026-03-28 | CV: education school name in small muted color |
+| 2026-03-28 | CV: finalized accent color as deep burgundy |
+| 2026-03-28 | CV: upgraded font to EB Garamond, abstract text smaller, awards cleanup |
+| 2026-03-28 | CV: font size 12pt, updated date moved to footer |
+| 2026-03-28 | Website: CV last updated synced to March 2026 |
