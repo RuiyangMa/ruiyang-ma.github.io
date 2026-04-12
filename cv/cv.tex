@@ -19,50 +19,50 @@
 \usepackage{hyperref}
 \usepackage{microtype}
 \usepackage{enumitem}
-\usepackage{array}
-\usepackage{booktabs}
+\usepackage{calc}
 \usepackage{parskip}
 \usepackage{fontawesome5}
-\usepackage{tabularx}
-\usepackage{calc}
-\usepackage{etoolbox}
 
 %% ---- Colors -------------------------------------------------
-\definecolor{accent}{RGB}{30, 64, 175}    % deep blue (matches website)
-\definecolor{muted}{RGB}{100, 116, 139}   % slate-500
+\definecolor{accent}{RGB}{30, 64, 175}
+\definecolor{muted}{RGB}{100, 116, 139}
 
 %% ---- Hyperref -----------------------------------------------
-\hypersetup{
-  colorlinks = true,
-  urlcolor   = accent,
-  linkcolor  = accent,
-}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
 
-%% ---- Typography tweaks --------------------------------------
+%% ---- Base spacing -------------------------------------------
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlength{\tabcolsep}{0pt}
 
-%% ---- Section heading ----------------------------------------
+%% ---- Left-column width (shared by ALL sections) -------------
+\newlength{\labelcol}
+\setlength{\labelcol}{1.55in}
+\newlength{\contentcol}
+\setlength{\contentcol}{\dimexpr\linewidth-\labelcol\relax}
+
+%% ---- Section heading (no rule) ------------------------------
 \newcommand{\cvsection}[1]{%
-  \vspace{14pt}%
+  \vspace{13pt}%
   {\large\bfseries\color{accent} #1}%
-  \vspace{3pt}\par%
-  {\color{muted}\rule{\linewidth}{0.4pt}}%
-  \vspace{4pt}%
+  \par\vspace{5pt}%
 }
 
-%% ---- Dated entry: \entry{DATE}{BODY} -----------------------
-% Date in left col (1.55in), body in right col
-\newlength{\datecol}
-\setlength{\datecol}{1.55in}
-\newcommand{\entry}[2]{%
-  \begin{tabular}{@{}p{\datecol}@{\hspace{6pt}}p{\linewidth-\datecol-6pt}@{}}
-    \raggedright\small\color{muted} #1 &
-    \raggedright #2 \\
-  \end{tabular}%
-  \vspace{3pt}%
+%% ---- Generic two-col row: \row{LEFT-STYLE}{label}{content} --
+%% All rows use identical \makebox width → strict column alignment
+\newcommand{\cvrow}[3]{%
+  \noindent%
+  \makebox[\labelcol][l]{#1{#2}}%
+  \begin{minipage}[t]{\contentcol}%
+    \raggedright #3%
+  \end{minipage}%
+  \par\vspace{3.5pt}%
 }
+
+%% Convenience wrappers
+% dated entry (education, awards, teaching)
+\newcommand{\entry}[2]{\cvrow{\small\color{muted}}{#1}{#2}}
+% label-value entry (research profile, skills)
+\newcommand{\labelrow}[2]{\cvrow{\small\itshape\color{muted}}{#1}{#2}}
 
 %% ---- Paper entry -------------------------------------------
 \newenvironment{paperentry}{%
@@ -77,7 +77,7 @@
   \end{list}\vspace{5pt}%
 }
 
-%% ---- Abstract block (indented both sides) ------------------
+%% ---- Abstract block (indented) -----------------------------
 \newenvironment{paperabstract}{%
   \list{}{%
     \setlength{\leftmargin}{1.6em}%
@@ -97,34 +97,31 @@
 %% ---- HEADER ------------------------------------------------
 \begin{center}
   {\fontsize{26}{30}\selectfont\bfseries Ma, Ruiyang}\\[8pt]
-  \color{muted}
-  \faEnvelope[regular]\enspace
-    \href{mailto:rma13@illinois.edu}{\textcolor{accent}{rma13@illinois.edu}}
-  \quad\textbullet\quad
-  \faGlobe\enspace
-    \href{https://ruiyangma.github.io/ruiyang-ma.github.io/}%
-         {\textcolor{accent}{ruiyangma.github.io}}
-  \quad\textbullet\quad
-  \faUniversity\enspace
-    University of Illinois at Urbana-Champaign
+  {\color{muted}%
+    \faEnvelope[regular]\enspace
+      \href{mailto:rma13@illinois.edu}{\textcolor{accent}{rma13@illinois.edu}}%
+    \quad\textbullet\quad
+    \faGlobe\enspace
+      \href{https://ruiyangma.github.io/ruiyang-ma.github.io/}%
+           {\textcolor{accent}{ruiyangma.github.io}}%
+  }\\[4pt]
+  {\small\color{muted}%
+    \faUniversity\enspace University of Illinois at Urbana-Champaign%
+  }
 \end{center}
 
-\vspace{2pt}
-{\color{accent}\rule{\linewidth}{0.4pt}}
-\vspace{4pt}
+\vspace{6pt}
 
 %% ---- RESEARCH PROFILE --------------------------------------
 \cvsection{Research Profile}
 
-\begin{tabular}{@{}p{\datecol}@{\hspace{6pt}}p{\linewidth-\datecol-6pt}@{}}
-  \small\itshape\color{muted}Fields &
-    Macro Finance;\enspace Monetary Economics \\[4pt]
-  \small\itshape\color{muted}Topics &
-    Monetary Transmission \textbullet\enspace
-    Networks \textbullet\enspace
-    Financial Frictions \textbullet\enspace
-    Identification in Macroeconomics \\
-\end{tabular}
+\labelrow{Fields}{Macro Finance;\enspace Monetary Economics}
+
+\labelrow{Topics}{%
+  Monetary Transmission \textbullet\enspace
+  Networks \textbullet\enspace
+  Financial Frictions \textbullet\enspace
+  Identification in Macroeconomics}
 
 %% ---- EDUCATION ---------------------------------------------
 \cvsection{Education}
@@ -145,7 +142,7 @@
   \textbf{B.S.} in Economics and Mathematics\\
   Southwestern University of Finance and Economics}
 
-%% ---- RESEARCH ----------------------------------------------
+%% ---- WORKING PAPERS ----------------------------------------
 \cvsection{Working Papers}
 
 %% Paper 01
@@ -197,20 +194,20 @@
 \vspace{6pt}
 
 \entry{FA25}{%
-  Intermediate Macroeconomics \enspace\textbullet\enspace
-  Undergraduate \hfill \textbf{Head Teaching Assistant}}
+  Intermediate Macroeconomics \hfill \textbf{Head Teaching Assistant}\\
+  {\small\color{muted}Undergraduate}}
 
 \entry{SP26, SP25, FA24}{%
-  Microeconomics Principles \enspace\textbullet\enspace
-  Undergraduate \hfill Teaching Assistant}
+  Microeconomics Principles \hfill Teaching Assistant\\
+  {\small\color{muted}Undergraduate}}
 
 \entry{SP24}{%
-  Macroeconomics II \enspace\textbullet\enspace
-  Ph.D. \hfill Teaching Assistant}
+  Macroeconomics II \hfill Teaching Assistant\\
+  {\small\color{muted}Ph.D.}}
 
 \entry{FA23}{%
-  Intermediate Macroeconomics \enspace\textbullet\enspace
-  Undergraduate \hfill Teaching Assistant}
+  Intermediate Macroeconomics \hfill Teaching Assistant\\
+  {\small\color{muted}Undergraduate}}
 
 %% ---- AWARDS ------------------------------------------------
 \cvsection{Awards \& Fellowships}
@@ -222,18 +219,15 @@
 %% ---- SKILLS ------------------------------------------------
 \cvsection{Skills}
 
-\begin{tabular}{@{}p{\datecol}@{\hspace{6pt}}p{\linewidth-\datecol-6pt}@{}}
-  \small\itshape\color{muted}Languages &
-    Chinese (native)\enspace\textbullet\enspace English (fluent) \\[4pt]
-  \small\itshape\color{muted}Computing &
-    Python \enspace\textbullet\enspace
-    Dynare \enspace\textbullet\enspace
-    Stata \enspace\textbullet\enspace
-    \LaTeX \\
-\end{tabular}
+\labelrow{Languages}{Chinese (native)\enspace\textbullet\enspace English (fluent)}
 
-\vspace{12pt}
-{\color{muted}\rule{\linewidth}{0.4pt}}\\[3pt]
+\labelrow{Computing}{%
+  Python \enspace\textbullet\enspace
+  Dynare \enspace\textbullet\enspace
+  Stata \enspace\textbullet\enspace
+  \LaTeX}
+
+\vspace{10pt}
 {\small\color{muted}\itshape Updated: \today}
 
 \end{document}
