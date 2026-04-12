@@ -54,7 +54,8 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ---
 
-### Paper 02
+### Paper 02 *(hidden from website — add `display: yes` to restore)*
+- **Display:** no
 - **Title:** Decomposing Information Effects and Monetary Policy Shocks: An LLM Approach
 - **Status:** Work in Progress
 - **Coauthors:** Jing Cynthia Wu, Shihan Xie
