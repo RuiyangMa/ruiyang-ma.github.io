@@ -14,7 +14,7 @@
 | Institution | University of Illinois at Urbana-Champaign |
 | Photo | `assets/photo.jpg` |
 | CV file | `assets/cv.pdf` (compiled from `cv/cv.tex`) |
-| CV last updated | March 2026 |
+| CV last updated | March 28, 2026 |
 
 ---
 
