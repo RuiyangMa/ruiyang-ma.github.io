@@ -50,7 +50,8 @@ I study questions related to monetary transmission mechanisms, financial network
 - **Status:** Work in Progress
 - **Coauthors:** Junze Lin
 - **Abstract:**
-  We embed a bank dependency network — a matrix whose entries measure the marginal impact of one bank's fundamentals on another's market value — into a New Keynesian model with heterogeneous households. The network generates heterogeneous bank responses to a common policy impulse, creating a financial reallocation channel that simultaneously stimulates aggregate demand and expands aggregate supply following an expansionary monetary shock, reinforcing each other on output but partially offsetting each other on inflation, thereby endogenously flattening the Phillips Curve. The equilibrium is governed by two network objects — a credit multiplier matrix that amplifies contemporaneous shocks and a legacy matrix that propagates the credit distribution across time — making the effective Phillips Curve slope state-dependent on the history of prior policy. Quantitative easing is amplified strictly more than conventional interest-rate policy because it transmits entirely through bank balance sheets.
+ We propose a financial reallocation channel for the transmission of monetary policy. We show that in an economy where banks are linked through an inter-dependency network with value-dissipation frictions, monetary easing endogenously shifts the cross-bank composition of credit, and this compositional shift has first-order macroeconomic effects. Because network-peripheral banks exhibit stronger value feedback, easing reallocates credit toward them, simultaneously boosting aggregate demand and lowering marginal cost. Consequently, the reallocation channel reinforces the output response while dampening inflation. We derive a tractable augmented New Keynesian system in which network-weighted effective market shares govern how credit composition maps into output and inflation. The model implies that quantitative easing activates this channel more fully than interest rate policy, and that monetary transmission is state-dependent: past policy reshapes the credit distribution and alters future transmission.
+
 
 ---
 
@@ -64,7 +65,8 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ---
 
-### Paper 03
+### Paper 03 *(hidden from website and CV — remove `display: no` to restore)*
+- **Display:** no
 - **Title:** The Financial Reallocation Channel: How Interbank Networks Shape Spatial Misallocation
 - **Status:** Work in Progress
 - **Coauthors:** Ke Gao, Hongrui Pu
