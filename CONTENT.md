@@ -82,7 +82,18 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ---
 
-## 5. Teaching Experience
+## 5. Education
+
+| Years | Degree | Institution |
+|-------|--------|-------------|
+| 2023 – Present | Ph.D. Economics | University of Illinois at Urbana-Champaign |
+| 2021 – 2023 | M.Sc. Policy Economy | University of Illinois at Urbana-Champaign |
+| 2018 – 2020 | B.A. Economics | University of Illinois at Urbana-Champaign |
+| 2016 – 2018 | B.S. Economics and Mathematics | Southwestern University of Finance and Economics |
+
+---
+
+## 6. Teaching Experience
 
 **Institution:** University of Illinois at Urbana-Champaign
 
@@ -95,7 +106,7 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ---
 
-## 6. Awards & Fellowships
+## 7. Awards & Fellowships
 *(not displayed on website currently, for record only)*
 
 | Year | Award |
@@ -105,7 +116,16 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ---
 
-## 7. Update Log
+## 8. Skills
+
+| Category | Details |
+|----------|---------|
+| Languages | Chinese (native), English (fluent) |
+| Coding | Python, Dynare, Stata, \LaTeX |
+
+---
+
+## 9. Update Log
 
 | Date | Change |
 |------|--------|

@@ -1,0 +1,206 @@
+%% ============================================================
+%% CV — Ma, Ruiyang
+%% Source of truth: ../CONTENT.md
+%% To compile: pdflatex cv.tex  (run twice for correct spacing)
+%% ============================================================
+
+\documentclass[11pt, letterpaper]{article}
+
+%% ---- Packages ----
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in, top=0.85in, bottom=0.85in]{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{datetime2}
+\usepackage{parskip}
+
+%% ---- Hyperref config ----
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = black,
+  linkcolor  = black,
+  citecolor  = black
+}
+
+%% ---- Layout helpers ----
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Column widths for dated entries (year | content)
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}p{1.45in}}
+\newcolumntype{Z}{p{4.85in}}
+
+%% ---- Section heading ----
+\newcommand{\cvsection}[1]{%
+  \vspace{10pt}%
+  {\large\bfseries #1}%
+  \vspace{2pt}%
+  \hrule height 0.5pt%
+  \vspace{6pt}%
+}
+
+%% ---- Dated entry: \entry{years}{content} ----
+\newcommand{\entry}[2]{%
+  \begin{tabular}{@{}YZ@{}}
+    #1 & #2
+  \end{tabular}%
+  \vspace{3pt}%
+}
+
+%% ---- Paper entry ----
+\newenvironment{paper}{%
+  \vspace{2pt}%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{0pt}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{4pt}%
+  }%
+  \item%
+}{%
+  \end{list}%
+  \vspace{4pt}%
+}
+
+%% ============================================================
+\begin{document}
+\pagestyle{plain}
+
+%% ---- Header ----
+\begin{center}
+  {\LARGE\bfseries Ma, Ruiyang} \\[6pt]
+  \href{mailto:rma13@illinois.edu}{rma13@illinois.edu}
+  \hspace{1em}$\cdot$\hspace{1em}
+  Updated: \DTMtoday
+\end{center}
+
+\vspace{4pt}
+
+%% ---- Research Profile ----
+\cvsection{Research Profile}
+
+\begin{tabular}{@{}p{1.45in}p{4.85in}@{}}
+  \textit{Research Fields} &
+    Macro Finance;\enspace Monetary Economics \\[3pt]
+  \textit{Research Topics} &
+    Monetary Transmission;\enspace Networks;\enspace Financial Frictions;\enspace
+    Identification in Macroeconomics
+\end{tabular}
+
+%% ---- Education ----
+\cvsection{Education}
+
+\entry{2023 -- Present}{%
+  Ph.D. Economics, University of Illinois at Urbana-Champaign.}
+
+\entry{2021 -- 2023}{%
+  M.Sc. Policy Economy, University of Illinois at Urbana-Champaign.}
+
+\entry{2018 -- 2020}{%
+  B.A. Economics, University of Illinois at Urbana-Champaign.}
+
+\entry{2016 -- 2018}{%
+  B.S. Economics and Mathematics, Southwestern University of Finance and Economics.}
+
+%% ---- Research ----
+\cvsection{Research}
+
+%% Paper 01
+\begin{paper}
+\textbf{The Financial Reallocation Channel of Monetary Policy} \hfill \textit{(in progress)}\\
+with Junze Lin \\[4pt]
+We embed a bank dependency network---a matrix whose entries measure the marginal
+impact of one bank's fundamentals on another's market value---into a New Keynesian
+model with heterogeneous households. The network generates heterogeneous bank
+responses to a common policy impulse, creating a financial reallocation channel that
+simultaneously stimulates aggregate demand and expands aggregate supply following an
+expansionary monetary shock, reinforcing each other on output but partially offsetting
+each other on inflation, thereby endogenously flattening the Phillips Curve. The
+equilibrium is governed by two network objects---a credit multiplier matrix that
+amplifies contemporaneous shocks and a legacy matrix that propagates the credit
+distribution across time---making the effective Phillips Curve slope state-dependent
+on the history of prior policy. Quantitative easing is amplified strictly more than
+conventional interest-rate policy because it transmits entirely through bank balance
+sheets.
+\end{paper}
+
+%% Paper 02  [hidden from website; included in CV]
+\begin{paper}
+\textbf{Decomposing Information Effects and Monetary Policy Shocks: An LLM Approach}
+\hfill \textit{(in progress)}\\
+with Jing Cynthia Wu and Shihan Xie
+\end{paper}
+
+%% Paper 03
+\begin{paper}
+\textbf{The Financial Reallocation Channel: How Interbank Networks Shape Spatial
+Misallocation} \hfill \textit{(in progress)}\\
+with Ke Gao and Hongrui Pu \\[4pt]
+We propose that the topology of interbank networks shapes spatial allocative efficiency
+through a financial reallocation channel. Banks with high self-amplification centrality
+face greater systemic risk exposure, leading them to contract local working-capital
+lending. This tighter credit supply generates endogenous microeconomic input wedges for
+local firms. Using the 1863--64 National Banking Acts as an institutional shock that
+rewired the network, we demonstrate that regions whose banks move to less exposed
+positions experience relaxed credit constraints. Because this spatial expansion
+disproportionately benefits financially constrained, inefficiently small firms, it
+corrects pre-existing misallocation and boosts aggregate efficiency. Furthermore, the
+layered structure of interbank claims amplifies these local credit distortions.
+Ultimately, we establish that financial network architecture and trade integration
+jointly determine aggregate macroeconomic productivity.
+\end{paper}
+
+%% Paper 04
+\begin{paper}
+\textbf{Pricing the Risk Lock-in: Financial Frictions, Endogenous Production Networks,
+and Corporate Bond Spreads} \hfill \textit{(in progress)}\\
+with Shaoqing Pan and Rong Yuwen \\[4pt]
+This research proposes to investigate how financial frictions distort firm-level supply
+chain adjustments and the resulting credit risk pricing. We develop a theoretical
+framework to identify a ``risk lock-in'' mechanism, where firms facing financing
+constraints and fixed adjustment costs may be unable to reconfigure their supplier
+networks toward stability during periods of high uncertainty. The study examines how
+these constraints break the ``flight-to-stability'' motive, potentially creating a
+``volatility trap'' that depresses firm productivity, and how the market prices this
+lack of flexibility, leading to a divergence in credit spreads between constrained and
+unconstrained firms.
+\end{paper}
+
+%% ---- Teaching Experiences ----
+\cvsection{Teaching Experiences}
+
+\textit{University of Illinois at Urbana-Champaign}
+
+\vspace{4pt}
+\entry{FA25}{%
+  Intermediate Macroeconomics (UG) \hfill Head Teaching Assistant}
+
+\entry{SP26, SP25, FA24}{%
+  Microeconomics Principles (UG) \hfill Teaching Assistant}
+
+\entry{SP24}{%
+  Macroeconomics II (PhD) \hfill Teaching Assistant}
+
+\entry{FA23}{%
+  Intermediate Macroeconomics (UG) \hfill Teaching Assistant}
+
+%% ---- Awards and Fellowships ----
+\cvsection{Awards and Fellowship}
+
+\entry{2026}{Paul W. Boltz Fellowship, University of Illinois}
+
+\entry{2025}{Hung-Chao and Julia Tai Family Fellowship, University of Illinois}
+
+%% ---- Skills ----
+\cvsection{Skills}
+
+\begin{tabular}{@{}p{1.45in}p{4.85in}@{}}
+  \textit{Languages} & Chinese (native), English (fluent) \\[3pt]
+  \textit{Coding}    & Python, Dynare, Stata, \LaTeX
+\end{tabular}
+
+\end{document}
