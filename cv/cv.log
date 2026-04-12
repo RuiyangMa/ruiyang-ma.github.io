@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  12 APR 2026 16:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  12 APR 2026 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -310,8 +310,7 @@ tawesome5
 (D:\miketex\tex/latex/fontawesome5\fontawesome5-mapping.def)))
 Package hyperref Info: Option `colorlinks' set `true' on input line 31.
 \labelcol=\skip57
-\contentcol=\skip58
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 93
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 91
 .
 
 (D:\miketex\tex/latex/lm\t1lmr.fd
@@ -319,24 +318,24 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (cv.aux)
 \openout1 = `cv.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -386,18 +385,18 @@ LaTeX Font Info:    ... okay on input line 93.
 \makeMPintoPDFobject=\count311
 \everyMPtoPDFconversion=\toks25
 )
-Package hyperref Info: Link coloring ON on input line 93.
+Package hyperref Info: Link coloring ON on input line 91.
  (cv.out) (cv.out)
 \@outlinefile=\write3
 \openout3 = `cv.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 93.
-Package microtype Info: Applying patch `item' on input line 93.
-Package microtype Info: Applying patch `toc' on input line 93.
-Package microtype Info: Applying patch `eqnum' on input line 93.
-Package microtype Info: Applying patch `footnote' on input line 93.
-Package microtype Info: Applying patch `verbatim' on input line 93.
-LaTeX Info: Redefining \microtypesetup on input line 93.
+LaTeX Info: Redefining \microtypecontext on input line 91.
+Package microtype Info: Applying patch `item' on input line 91.
+Package microtype Info: Applying patch `toc' on input line 91.
+Package microtype Info: Applying patch `eqnum' on input line 91.
+Package microtype Info: Applying patch `footnote' on input line 91.
+Package microtype Info: Applying patch `verbatim' on input line 91.
+LaTeX Info: Redefining \microtypesetup on input line 91.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -413,17 +412,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 101.
+nput line 99.
 
 (D:\miketex\tex/latex/fontawesome5\ufontawesomefree1.fd)
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-03.
+01.
 
 (D:\miketex\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on i
-nput line 109.
+nput line 107.
 
 (D:\miketex\tex/latex/fontawesome5\ufontawesomefree3.fd) [1
 
@@ -432,32 +431,32 @@ nts/enc/dvips/lm/lm-ec.enc}{D:/miketex/fonts/enc/dvips/fontawesome5/fa5free1.en
 c}{D:/miketex/fonts/enc/dvips/lm/lm-ts1.enc}{D:/miketex/fonts/enc/dvips/fontawe
 some5/fa5free3.enc}]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-28.
+26.
 (D:\miketex\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-28.
+26.
  (D:\miketex\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-228.
+226.
 
 (D:\miketex\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-228.
+226.
  (D:\miketex\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 228.
+(Font)              <10.95> on input line 226.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 228.
+(Font)              <8> on input line 226.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 228.
+(Font)              <6> on input line 226.
 
 [2] (cv.aux)
  ***********
@@ -468,10 +467,10 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 14980 strings out of 467870
- 254750 string characters out of 5434709
- 699441 words of memory out of 5000000
- 43641 multiletter control sequences out of 15000+600000
+ 14979 strings out of 467870
+ 254740 string characters out of 5434709
+ 699445 words of memory out of 5000000
+ 43640 multiletter control sequences out of 15000+600000
  672113 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,79p,1001b,510s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -480,7 +479,7 @@ miketex/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb><D:/miketex/
 fonts/type1/public/lm/lmbx10.pfb><D:/miketex/fonts/type1/public/lm/lmbx12.pfb><
 D:/miketex/fonts/type1/public/lm/lmr10.pfb><D:/miketex/fonts/type1/public/lm/lm
 r8.pfb><D:/miketex/fonts/type1/public/lm/lmri10.pfb>
-Output written on cv.pdf (2 pages, 162480 bytes).
+Output written on cv.pdf (2 pages, 162456 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  3 named destinations out of 1000 (max. 500000)

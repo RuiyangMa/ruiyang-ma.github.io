@@ -37,8 +37,6 @@
 %% ---- Left-column width (shared by ALL sections) -------------
 \newlength{\labelcol}
 \setlength{\labelcol}{1.55in}
-\newlength{\contentcol}
-\setlength{\contentcol}{\dimexpr\linewidth-\labelcol\relax}
 
 %% ---- Section heading (no rule) ------------------------------
 \newcommand{\cvsection}[1]{%
@@ -47,12 +45,12 @@
   \par\vspace{5pt}%
 }
 
-%% ---- Generic two-col row: \row{LEFT-STYLE}{label}{content} --
-%% All rows use identical \makebox width → strict column alignment
+%% ---- Generic two-col row: \cvrow{LEFT-STYLE}{label}{content} --
+%% Width computed at call time so geometry margins are in effect
 \newcommand{\cvrow}[3]{%
   \noindent%
   \makebox[\labelcol][l]{#1{#2}}%
-  \begin{minipage}[t]{\contentcol}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\labelcol\relax}%
     \raggedright #3%
   \end{minipage}%
   \par\vspace{3.5pt}%
