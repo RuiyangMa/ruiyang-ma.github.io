@@ -13,7 +13,7 @@
 | Position | Ph.D. Candidate · Economics |
 | Institution | University of Illinois at Urbana-Champaign |
 | Photo | `assets/photo.jpg` |
-| CV file | `assets/rm_cv_260328.pdf` |
+| CV file | `assets/cv.pdf` (compiled from `cv/cv.tex`) |
 | CV last updated | March 2026 |
 
 ---
