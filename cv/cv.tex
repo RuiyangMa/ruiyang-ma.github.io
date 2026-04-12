@@ -8,7 +8,7 @@
 %% ---- Packages -----------------------------------------------
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\usepackage{ebgaramond}
 \usepackage[
   top    = 0.75in,
   bottom = 0.75in,
@@ -42,7 +42,9 @@
 \newcommand{\cvsection}[1]{%
   \vspace{13pt}%
   {\large\bfseries\color{accent} #1}%
-  \par\vspace{5pt}%
+  \par\vspace{3pt}%
+  {\color{accent}\rule{\linewidth}{0.3pt}}%
+  \par\vspace{4pt}%
 }
 
 %% ---- Generic two-col row: \cvrow{LEFT-STYLE}{label}{content} --
@@ -82,7 +84,7 @@
     \setlength{\rightmargin}{1.6em}%
     \setlength{\topsep}{3pt}%
     \setlength{\parsep}{0pt}%
-  }\item\relax%
+  }\item\relax\small%
 }{%
   \endlist%
 }
@@ -210,9 +212,13 @@
 %% ---- AWARDS ------------------------------------------------
 \cvsection{Awards \& Fellowships}
 
-\entry{2026}{Paul W. Boltz Fellowship, University of Illinois}
+\entry{2026}{%
+  Paul W. Boltz Fellowship\\
+  {\small\color{muted}University of Illinois at Urbana-Champaign}}
 
-\entry{2025}{Hung-Chao and Julia Tai Family Fellowship, University of Illinois}
+\entry{2025}{%
+  Hung-Chao and Julia Tai Family Fellowship\\
+  {\small\color{muted}University of Illinois at Urbana-Champaign}}
 
 %% ---- SKILLS ------------------------------------------------
 \cvsection{Skills}
