@@ -14,7 +14,7 @@
 | Institution | University of Illinois at Urbana-Champaign |
 | Photo | `assets/photo.jpg` |
 | CV file | `assets/cv.pdf` (compiled from `cv/cv.tex`) |
-| CV last updated | April 12, 2026 |
+| CV last updated | April 13, 2026 |
 
 ---
 
@@ -72,6 +72,15 @@ I study questions related to monetary transmission mechanisms, financial network
 - **Coauthors:** Ke Gao, Hongrui Pu
 - **Abstract:**
   We propose that the topology of interbank networks shapes spatial allocative efficiency through a financial reallocation channel. Banks with high self-amplification centrality face greater systemic risk exposure, leading them to contract local working-capital lending. This tighter credit supply generates endogenous microeconomic input wedges for local firms. Using the 1863–64 National Banking Acts as an institutional shock that rewired the network, we demonstrate that regions whose banks move to less exposed positions experience relaxed credit constraints. Because this spatial expansion disproportionately benefits financially constrained, inefficiently small firms, it corrects pre-existing misallocation and boosts aggregate efficiency. Furthermore, the layered structure of interbank claims amplifies these local credit distortions. Ultimately, we establish that financial network architecture and trade integration jointly determine aggregate macroeconomic productivity.
+
+---
+
+### Paper 05
+- **Title:** Trade Credit as a Financial Overlay on Production Networks
+- **Status:** Work in Progress
+- **Coauthors:** Lucia Liuqing Wang
+- **Abstract:**
+  We identify a horizontal contagion mechanism through which idiosyncratic shocks propagate across economically unrelated firms. When an anchor customer suffers a downturn, their common supplier faces tightened working-capital constraints. Due to asymmetric bargaining power, the supplier extends forbearance to the distressed customer while extracting liquidity from unrelated peer customers by shortening payment terms and reducing credit limits. This horizontal transmission is orthogonal to the Leontief input-output matrix, constituting a novel financial overlay channel beyond standard network propagation. We provide three contributions: a methodological critique showing that empirical designs omitting network structure produce omitted-variable bias; identification of the horizontal contagion mechanism as a new propagation path; and evidence of state-dependent amplification, where the contagion intensifies during aggregate credit tightening when suppliers cannot substitute external financing. We validate each link in the causal chain using BEA industry-level input-output tables linked to firm-level data from Compustat and CRSP.
 
 ---
 
@@ -142,3 +151,4 @@ I study questions related to monetary transmission mechanisms, financial network
 | 2026-04-12 | CV: upgraded font to EB Garamond, abstract text smaller, awards cleanup |
 | 2026-04-12 | CV: font size 12pt, updated date moved to footer |
 | 2026-04-12 | Website: CV last updated synced to April 2026 |
+| 2026-04-13 | Added Paper 05: Trade Credit as a Financial Overlay on Production Networks |
