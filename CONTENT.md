@@ -61,7 +61,7 @@ I study questions related to monetary transmission mechanisms, financial network
 - **Status:** Work in Progress
 - **Coauthors:** Jing Cynthia Wu, Shihan Xie
 - **Abstract:**
-  Develops a novel identification strategy using large language models to separate the information effects of central bank communication from pure monetary policy shocks, improving causal inference in high-frequency settings.
+  Standard high-frequency identification of monetary policy shocks relies on aggregate financial prices, which reveal what expectations changed but not why. We develop an LLM-based extraction pipeline applied to sell-side analyst reports from major investment banks to directly observe individual-level forecasts and the causal reasoning behind them around FOMC announcements. This approach improves identification on two margins: a content-based decomposition that classifies monetary surprises by the economic mechanisms analysts attribute to each event, and a belief-distribution dimension that captures cross-analyst disagreement in both forecasts and causal models. We show that monetary surprises of the same size produce heterogeneous macroeconomic effects depending on their perceived cause — distinguishing inflation-driven from growth-driven interpretations — and that consensus events produce cleaner, more predictable impulse responses than contested ones. Our content-based classification complements and extends statistical decomposition methods (Acosta 2023; Jarocinski and Karadi 2020) by providing directly observed causal evidence rather than inferred shock categories.
 
 ---
 
@@ -154,3 +154,4 @@ I study questions related to monetary transmission mechanisms, financial network
 | 2026-04-12 | CV: font size 12pt, updated date moved to footer |
 | 2026-04-12 | Website: CV last updated synced to April 2026 |
 | 2026-04-13 | Added Paper 05: Trade Credit as a Financial Overlay on Production Networks |
+| 2026-04-13 | Updated Paper 02 abstract based on project story |

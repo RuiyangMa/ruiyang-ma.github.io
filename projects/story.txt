@@ -1,0 +1,193 @@
+The Story: From Prices to Beliefs — Identifying Monetary Shocks
+Through the Lens of Expectation Formation
+================================================================
+
+Core Pitch (one sentence):
+"The same monetary surprise has different macroeconomic effects
+depending on why market participants think it happened."
+
+
+1. THE PROBLEM
+--------------
+
+Traditional high-frequency identification (HFI) of monetary policy shocks
+relies on aggregate financial market prices — interest rate futures, treasury
+yields, stock returns — measured in narrow windows around FOMC announcements.
+These prices are equilibrium outcomes of heterogeneous beliefs. They tell us
+WHAT expectations changed, but not WHY they changed.
+
+This matters for two reasons:
+
+(a) The "Why" Problem — Perceived cause shapes transmission.
+    A 25bp rate surprise driven by "the Fed sees persistent inflation" and
+    a 25bp surprise driven by "the Fed is responding to a one-off supply shock"
+    are the same in the price data, but they imply very different expected
+    policy paths, and therefore very different real effects. The causal
+    mechanism that market participants attribute to a policy action determines
+    how they adjust portfolios, investment plans, and hiring decisions.
+    Existing HFI measures cannot distinguish between these cases.
+
+(b) The "Who" Problem — Aggregate prices mask belief heterogeneity.
+    Two completely different belief distributions can produce the same
+    equilibrium price change. A +5bp move in fed funds futures could reflect
+    unanimous agreement, or deep disagreement (half expecting +15bp, half
+    expecting -5bp). These two scenarios have different implications for
+    subsequent asset price dynamics and real economic responses. Aggregate
+    prices are an insufficient statistic for the underlying belief structure.
+
+
+2. WHAT WE DO
+--------------
+
+We use LLM-based structured extraction from sell-side analyst reports
+(Goldman Sachs, J.P. Morgan, Morgan Stanley, etc.) to observe what
+aggregate prices cannot reveal:
+
+  - Individual-level forecasts: specific predictions about fed funds rate,
+    GDP, inflation, unemployment — with numerical values, time horizons,
+    confidence levels, and explicit revisions from prior forecasts.
+
+  - Causal reasoning: the mechanisms analysts cite to justify each forecast.
+    Not just "we expect 3 cuts in 2025" but "we expect 3 cuts because
+    labor market softening will push unemployment above 4.5%, reducing
+    wage pressure and allowing the Fed to ease." Each causal argument is
+    classified by economic channel (inflation, labor, fiscal, etc.),
+    policy direction (tighten/ease), and strength.
+
+  - Cross-analyst heterogeneity: different analysts looking at the same
+    data and the same FOMC communication, arriving at different forecasts
+    through different causal models. This disagreement is directly
+    observable in our data.
+
+
+3. WHY THIS IS BETTER IDENTIFICATION
+--------------------------------------
+
+Our approach improves monetary shock identification on two margins:
+
+Margin 1: Content-based decomposition (the "Why").
+    Existing decompositions (Acosta 2023, Jarocinski & Karadi 2020) rely on
+    statistical methods — heteroskedasticity across regimes, sign restrictions
+    — to infer what type of shock drove a given FOMC event. These methods
+    recover shock categories (demand, supply, monetary, news) but cannot
+    observe the actual reasoning process. We directly observe the causal
+    mechanisms that analysts attribute to each forecast revision. This allows:
+
+    - Finer-grained shock classification beyond the standard 4-type taxonomy
+    - Content-based validation: we can verify whether a statistically
+      identified "demand shock" is actually perceived as demand-driven
+      by market participants
+    - Testing whether perceived cause matters for transmission: do
+      "inflation-driven" and "growth-driven" monetary surprises of the
+      same size produce different macro responses?
+
+Margin 2: Belief distribution (the "Who").
+    We observe the cross-section of analyst beliefs, not just their average.
+    This provides:
+
+    - Disagreement measures: the dispersion of forecasts and the dispersion
+      of causal reasoning across analysts for the same FOMC event
+    - Consensus vs. contested channels: for a given event, is the perceived
+      cause widely agreed upon, or do analysts disagree about the mechanism?
+    - Predictive content of disagreement: does higher disagreement in
+      causal reasoning predict larger subsequent forecast errors, higher
+      volatility, or different impulse responses?
+
+
+4. THE KEY EMPIRICAL TESTS
+---------------------------
+
+Test 1: Does "Why" matter for transmission?
+    Take FOMC events with similar-sized monetary surprises (measured by
+    traditional HFI). Split them by the dominant causal reasoning in analyst
+    reports. Estimate impulse responses separately. If the responses differ,
+    perceived cause matters — and traditional HFI is missing a relevant
+    dimension.
+
+Test 2: Content-based vs. statistical decomposition.
+    Compare our content-based shock classification with Acosta's
+    heteroskedasticity-based classification. When do they agree? When they
+    disagree, which predicts macro outcomes better?
+
+Test 3: Does disagreement predict transmission?
+    For FOMC events where analysts agree on the cause, vs. events where
+    they disagree, are the subsequent macro responses different? Theory
+    suggests that consensus events should produce cleaner, more predictable
+    impulse responses.
+
+Test 4: Analyst reasoning as instrument.
+    Use the cross-sectional variation in analyst causal reasoning as
+    instruments for decomposing the aggregate monetary surprise into
+    components — an alternative to Acosta's regime-based identification
+    that does not require discrete changes in Fed communication policy.
+
+
+5. CONTRIBUTION RELATIVE TO KEY LITERATURE
+--------------------------------------------
+
+vs. Traditional HFI (GSS 2005, Nakamura & Steinsson 2018):
+    They measure what changed. We measure why it changed, and show that
+    the "why" matters for the "what happens next."
+
+vs. Acosta (2023):
+    He uses newspaper text to statistically decompose monetary surprises
+    into perceived demand/supply/monetary components. We use analyst reports
+    to directly observe the causal reasoning, providing content-based (not
+    just statistical) identification, finer granularity, and a heterogeneity
+    dimension he cannot access.
+
+vs. Jarocinski & Karadi (2020):
+    They use sign restrictions on stock returns and interest rates to
+    separate monetary and information shocks. We show that stock returns
+    are a poor separator (as Acosta also argues) and provide a richer
+    decomposition based on observed reasoning.
+
+vs. Bauer & Swanson (2023):
+    They argue information effects are an omitted variable bias. Our data
+    can directly test this: if analyst reasoning around FOMC events
+    references Fed-revealed information (not just pre-existing macro news),
+    then information effects are real, not spurious.
+
+vs. Coibion & Gorodnichenko (2012, 2015):
+    They study expectation heterogeneity using surveys (SPF, Michigan).
+    Surveys provide point forecasts but no reasoning. We provide both
+    forecasts and the causal models behind them.
+
+
+6. DATA AND METHOD
+-------------------
+
+Source: Sell-side research reports from major investment banks, covering
+FOMC meetings and US macro outlook, 2024-2025 (expandable).
+
+Extraction pipeline:
+  Step 0: Report type classification (structured forecast, market
+          commentary, survey report, strategy note)
+  Step A: Forward-looking forecast extraction with temporal filtering
+  Step B: Causal reasoning extraction with causality standards,
+          locality constraints, and direction/strength calibration
+
+Quality validation: Hand-labeled audit on 6 reports (157 causal arguments,
+90 forecasts) with iterative prompt improvement targeting >85% forecast
+accuracy and >70% causal reasoning accuracy.
+
+
+7. WHAT WE NEED TO FIGURE OUT
+-------------------------------
+
+(a) Sample scope: How many FOMC cycles do we need? How many banks/analysts?
+    Minimum viable: ~20 FOMC events × 3-5 banks = 60-100 reports.
+
+(b) Temporal alignment: Can we align analyst reports to FOMC windows
+    tightly enough to construct "high-frequency" belief revisions?
+    Alternative: use report publication dates and construct wider windows.
+
+(c) Aggregation: How do we go from individual analyst forecasts + reasoning
+    to a usable shock measure? Options include:
+    - Majority-vote on causal channel → content-based shock classification
+    - Weighted average of forecast revisions → belief-adjusted surprise
+    - Disagreement index → second-moment measure
+
+(d) Identification formalization: What are the precise identifying
+    assumptions? How do we write down a model that maps analyst beliefs
+    to structural shocks?
