@@ -86,6 +86,17 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ---
 
+### Paper 06 *(hidden from website and CV — change to `display: yes` to restore)*
+- **Display:** no
+- **Title:** Roads to Where? Expressway Access, E-Commerce Penetration, and the Market Structure Transformation of Rural China
+- **Status:** Work in Progress (Preliminary)
+- **Coauthors:** Ke Gao *(confirm if Ruiyang Ma is also a coauthor)*
+- **Source file:** `projects/propodal_260310.tex`
+- **Abstract:**
+  China invested massively in rural expressway infrastructure, yet existing evidence suggests these investments yielded modest or even negative local effects. We argue that the limited returns reflect a missing complement: digital market access. Traditional rural markets resemble over-the-counter (OTC) structures — transactions are bilateral, prices are opaque, and intermediaries extract large margins — so expressways reduce transport costs but do not alter market structure, with savings captured by middlemen or channeled into labor outmigration. E-commerce platforms introduce exchange-like features (centralized matching, transparent pricing, disintermediation) that fundamentally reshape how rural producers connect with buyers, but cannot function without physical logistics infrastructure to complete delivery. Expressway exits provide precisely this backbone. We formalize this physical–digital complementarity in a search-theoretic framework and test it using a triple-difference design exploiting (i) staggered expressway exit openings, (ii) China's E-Commerce Demonstration County policy (2014–2020), and (iii) within-county variation across townships. Using township-level nighttime lights, population, land cover, firm registrations, and agricultural wholesale prices, we find that expressway exits alone produce modest gains masking spatial reallocation, whereas exits combined with e-commerce generate substantially larger effects consistent with a market structure transformation from decentralized intermediation to centralized platform exchange.
+
+---
+
 ### Paper 05
 - **Title:** Trade Credit as a Financial Overlay on Production Networks
 - **Status:** Work in Progress
@@ -157,3 +168,4 @@ I study questions related to monetary transmission mechanisms, financial network
 | 2026-04-13 | Updated Paper 02 abstract based on project story |
 | 2026-04-13 | Paper 02 restored to website and CV |
 | 2026-04-13 | Paper 02 hidden again from website and CV |
+| 2026-04-13 | Added Paper 06 (Roads to Where) to CONTENT.md, hidden |

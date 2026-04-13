@@ -1,0 +1,517 @@
+\documentclass[12pt]{article}
+
+% ── Packages ──────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}\doublespacing
+\usepackage{amsmath,amssymb,amsthm,bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage{tabularx}
+\usepackage[default]{sourcesanspro}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{prediction}{Prediction}
+
+% ── Title ─────────────────────────────────────────────────────
+\title{\textbf{Roads to Where? Expressway Access, E-Commerce Penetration, and the Market Structure Transformation of Rural China}\thanks{Preliminary and incomplete. Comments welcome.}}
+\author{Ke Gao\\[0.5em]\textit{University of Illinois at Urbana-Champaign}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+China invested massively in expressway infrastructure extending deep into rural areas, yet existing evidence suggests these investments yielded modest or even negative local effects. I argue that the limited returns to rural expressways reflect a missing complement: digital market access. Traditional rural markets resemble over-the-counter (OTC) structures---transactions are bilateral, prices are opaque, and intermediaries extract large margins. In this environment, expressways reduce transport costs but do not alter market structure; the savings are captured by middlemen or channeled into labor outmigration. E-commerce platforms introduce exchange-like features---centralized matching, transparent pricing, and disintermediation---that can fundamentally reshape how rural producers connect with buyers. But platforms cannot function without physical logistics infrastructure to complete delivery. Expressway exits provide precisely this backbone. I formalize this physical--digital complementarity in a search-theoretic framework and test it using a triple-difference design that exploits (i) staggered expressway exit openings, (ii) China's E-Commerce Demonstration County policy (2014--2020), and (iii) within-county variation across townships. Using township-level nighttime lights, population, land cover, firm registrations, logistics points-of-interest, and agricultural wholesale prices, I find that expressway exits alone produce modest gains that mask spatial reallocation, whereas exits combined with e-commerce generate substantially larger effects consistent with a market structure transformation from decentralized intermediation to centralized platform exchange.
+
+\bigskip
+\noindent\textbf{JEL Codes:} O18, R12, R42, L81, Q13.\\
+\textbf{Keywords:} Expressways, e-commerce, market microstructure, rural development, infrastructure complementarity, China.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+%% ══════════════════════════════════════════════════════════════
+%% 1. INTRODUCTION
+%% ══════════════════════════════════════════════════════════════
+\section{Introduction}
+
+Between 2000 and 2020, China built the world's largest controlled-access expressway network, extending more than 160,000 kilometers into every province and deep into rural hinterlands. The stated objective was to connect peripheral regions to national markets and stimulate local economic development. Yet a growing body of evidence suggests that the returns to rural transport infrastructure are at best modest and at worst negative: expressways passing through peripheral counties appear to facilitate the outflow of labor and economic activity toward larger cities rather than generating local growth \citep{faber2014,baumsnow2020,banerjee2020}. The conventional interpretation---that rural expressways are ``white elephants''---has become influential in both academic and policy circles.
+
+This paper challenges that interpretation. I argue that the limited returns to rural expressways do not reflect an inherent flaw in the infrastructure itself, but rather a \textit{missing complement}: digital market access. The core insight draws an analogy from financial market microstructure. Traditional rural commodity markets closely resemble \textit{over-the-counter} (OTC) markets: transactions are bilateral, prices are opaque, and intermediaries---local middlemen who aggregate small quantities from dispersed farmers and transport them to urban wholesale markets---extract substantial margins \citep{allen2014,atkin2015}. In this environment, an expressway exit reduces the physical cost of transport but does not alter the underlying market structure. Middlemen capture much of the transport cost savings through their bargaining power, and the primary margin of adjustment is labor outmigration along the newly accessible corridor. Roads become ``exit ramps.''
+
+E-commerce platforms---Taobao, Pinduoduo, JD.com---introduce \textit{exchange-like} features into this environment: centralized matching of buyers and sellers, transparent posted prices, standardized product listings, and reputation systems that substitute for personal trust \citep{couture2021}. When producers gain access to such platforms, the market structure shifts from decentralized bilateral bargaining to centralized platform-mediated exchange. Intermediary margins compress, the effective market radius expands from a local catchment area to the national consumer base, and the gains from reduced transport costs accrue to producers rather than middlemen. But this transformation cannot occur without physical logistics infrastructure to complete delivery---just as a financial exchange requires clearing and settlement systems to function \citep{duffie2011}. In rural China, expressway exits serve as the critical logistics nodes: courier companies locate sorting and distribution hubs at exits, and the ``last mile'' cost of package delivery depends directly on the distance to the nearest interchange.
+
+The central hypothesis is therefore one of \textit{strict complementarity}:
+
+\begin{quote}
+\textit{Neither expressway access nor e-commerce penetration alone is sufficient to generate sustained rural economic growth. Expressways without e-commerce facilitate outflow; e-commerce without expressways cannot overcome last-mile logistics costs. Only the combination triggers a market structure transformation---from decentralized intermediation to centralized exchange---that converts expressway exits from exit ramps into two-way trade nodes.}
+\end{quote}
+
+I formalize this argument in a search-theoretic conceptual framework (Section~\ref{sec:framework}) that models two trading channels available to a rural producer: (i) a \textit{middleman channel} characterized by bilateral search, Nash bargaining, and intermediary markdowns; and (ii) a \textit{platform channel} characterized by centralized matching, posted prices, and a logistics cost that depends on distance to the nearest expressway exit. The model yields three testable propositions: (a) expressway access alone has an ambiguous effect on local economic activity because transport cost savings are partially captured by middlemen and partially channeled into outmigration; (b) e-commerce access alone has a limited effect because last-mile logistics costs prevent platform adoption; and (c) the joint provision of both generates a discrete increase in producer surplus through disintermediation and market expansion, with the complementarity being stronger for standardized agricultural products and for producers with weaker initial bargaining power.
+
+Empirically, I implement a triple-difference design (Section~\ref{sec:identification}) that exploits three sources of variation:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Expressway exit access:} staggered opening of expressway interchanges across townships, 2006--2019, measured at the exit level rather than the corridor level.
+    \item \textbf{E-commerce policy:} China's ``E-Commerce into Rural Areas Comprehensive Demonstration County'' program, rolled out in staggered batches from 2014 to 2020 by the Ministry of Commerce, which provided county-level funding for e-commerce service centers, township logistics stations, and village service points.
+    \item \textbf{Within-county variation:} Township-level differences in exit access within the same county, which allows county$\times$year fixed effects to absorb all county-level confounders---including the endogenous selection of demonstration counties.
+\end{enumerate}
+
+The main estimating equation is:
+\begin{equation}\label{eq:main}
+    Y_{ict} = \alpha_i + \delta_{ct} + \beta_1 \, \text{Exit}_{it} + \beta_3 \, (\text{Exit}_{it} \times \text{DemoCounty}_{ct}) + \varepsilon_{ict}
+\end{equation}
+where $\alpha_i$ are township fixed effects, $\delta_{ct}$ are county$\times$year fixed effects, $\text{Exit}_{it}$ indicates whether township $i$ has gained expressway exit access by year $t$, and $\text{DemoCounty}_{ct}$ indicates whether the county has been designated a demonstration county by year $t$. The parameter $\beta_1$ captures the effect of exit access in the absence of e-commerce policy; $\beta_3$ captures the additional effect when both are present---the complementarity.
+
+I assemble a novel township-level panel dataset covering approximately 33,000 rural towns (\textit{zhen}) and townships (\textit{xiang}) over 2012--2019 (Section~\ref{sec:data}). Outcome variables include VIIRS nighttime lights (proxy for economic activity), WorldPop gridded population estimates, 30-meter land cover data tracking cropland-to-impervious-surface conversion, firm registration records from the State Administration for Industry and Commerce (SAIC) disaggregated by industry, logistics points-of-interest from commercial mapping services, and agricultural wholesale price data from the Ministry of Agriculture's market monitoring system.
+
+The paper makes three contributions. First, it provides a unified explanation for why transport infrastructure generates heterogeneous returns across settings: the returns depend on the market structure into which the infrastructure is embedded. This reconciles the null or negative findings of \citet{faber2014} and \citet{baumsnow2020} with the positive effects found in contexts where complementary market institutions exist. Second, it introduces the financial market microstructure analogy---OTC versus exchange---into the study of rural development, providing a precise theoretical language for the mechanism through which digital platforms alter the returns to physical infrastructure. Third, it offers granular evidence at the township level, measuring connectivity at expressway \textit{exits} rather than along corridors, which resolves a key measurement limitation in prior work.
+
+
+%% ══════════════════════════════════════════════════════════════
+%% 2. INSTITUTIONAL BACKGROUND
+%% ══════════════════════════════════════════════════════════════
+\section{Institutional Background}\label{sec:background}
+
+\subsection{China's Expressway Network and the Role of Exits}
+
+China's National Expressway Network (\textit{Guojia Gaosu Gonglu Wang}) expanded from approximately 16,000 km in 2000 to over 160,000 km by 2020, surpassing the U.S.\ Interstate Highway System in total length. Unlike ordinary roads, expressways are controlled-access facilities: vehicles can enter and exit only at designated interchanges. This institutional feature means that a township located along an expressway corridor but lacking an exit receives no direct connectivity benefit---and may in fact suffer severance effects as the highway physically divides the community.
+
+Expressway exits are the operative nodes of connectivity. They determine whether a township can access the high-speed network for the movement of goods and people. For e-commerce logistics in particular, exits serve as anchor points for the parcel distribution network: major courier companies (SF Express, ZTO, YTO, STO, Yunda) locate township-level sorting and transfer stations at or near expressway exits, and last-mile delivery costs---which in rural areas are three to five times urban rates---depend critically on the distance between the village and the nearest exit-adjacent logistics hub.
+
+\subsection{The E-Commerce Demonstration County Policy}
+
+In 2014, the Ministry of Commerce launched the ``E-Commerce into Rural Areas Comprehensive Demonstration'' (\textit{Dianzi Shangwu Jinru Nongcun Zonghe Shifan}) program. The program was rolled out in staggered batches: 56 counties in 2014 (pilot), 200 in 2015, 240 in 2016, 260 in 2017, 260 in 2018, and additional batches through 2020, eventually covering over 1,200 counties. Each designated county received approximately 20 million RMB (roughly \$3 million) in central government funding to support:
+
+\begin{itemize}[nosep]
+    \item A county-level e-commerce public service center;
+    \item Township-level logistics distribution stations;
+    \item Village-level e-commerce service points;
+    \item Training programs for rural e-commerce entrepreneurs;
+    \item Cold-chain and warehousing infrastructure for agricultural products.
+\end{itemize}
+
+Selection into the program prioritized \textit{national-level poverty counties} (\textit{guojia ji pinkun xian}), a predetermined administrative designation based on historical income levels. While this implies that demonstration counties are systematically different from non-demonstration counties, the county$\times$year fixed effects in my empirical design absorb all county-level heterogeneity, including the selection process itself. Identification relies on within-county, within-year variation in exit access across townships.
+
+
+%% ══════════════════════════════════════════════════════════════
+%% 3. CONCEPTUAL FRAMEWORK
+%% ══════════════════════════════════════════════════════════════
+\section{Conceptual Framework}\label{sec:framework}
+
+I develop a stylized model of a rural township's market access to formalize the complementarity between physical and digital infrastructure. The framework draws on search-theoretic models of OTC markets \citep{dgp2005,dgp2007} and the literature comparing centralized and decentralized trading structures \citep{pagano1989,malamud2017,glode2020}.
+
+\subsection{Environment}
+
+Consider a continuum of rural producers indexed by $i$, each endowed with one unit of a differentiated agricultural product with production cost $c$. The product has value $v > c$ to urban consumers. The surplus from trade is $S = v - c - \tau_i$, where $\tau_i$ is the transport cost from producer $i$'s township to the market, which depends on whether the township has expressway exit access:
+\begin{equation}
+    \tau_i =
+    \begin{cases}
+        \tau_L & \text{if township has exit access} \\
+        \tau_H & \text{if no exit access}
+    \end{cases}
+    \quad \text{with } \tau_H > \tau_L > 0.
+\end{equation}
+
+Producers can sell through two channels.
+
+\subsubsection{Channel M: Middleman (OTC Structure)}
+
+A producer searches for a middleman at rate $\lambda_M$. Upon meeting, the middleman and producer bargain over the price. Following \citet{dgp2005}, the outcome is determined by Nash bargaining with the producer's bargaining weight $\theta \in (0,1)$. The middleman has an outside option of $\bar{u}_M$ (reflecting access to alternative suppliers). The producer's expected payoff from the middleman channel is:
+\begin{equation}
+    V^M_i = \frac{\lambda_M}{r + \lambda_M} \cdot \theta \cdot (S_i - \bar{u}_M)
+\end{equation}
+where $r$ is the discount rate and $S_i = v - c - \tau_i$.
+
+Key features of this channel:
+\begin{itemize}[nosep]
+    \item Matching is \textit{local}: $\lambda_M$ does not depend on the national demand for the product.
+    \item The producer's bargaining power $\theta$ is low: middlemen possess superior information about downstream prices and have access to multiple suppliers.
+    \item Transport cost reductions ($\tau_i \downarrow$) increase $S_i$, but the producer captures only fraction $\theta$ of the increase. If $\theta$ is small, most of the gain from expressway access accrues to the middleman.
+\end{itemize}
+
+\subsubsection{Channel P: Platform (Exchange Structure)}
+
+A producer lists the product on an e-commerce platform (Taobao, Pinduoduo) at a posted price. The platform provides:
+\begin{itemize}[nosep]
+    \item \textit{Centralized matching}: The product is visible to $N$ potential buyers nationwide.
+    \item \textit{Price transparency}: The producer observes competitors' prices and can set a market-clearing price.
+    \item \textit{Disintermediation}: The platform charges a small commission $\phi \ll (1-\theta)S$, replacing the middleman's large markdown.
+\end{itemize}
+
+However, using the platform requires fulfillment: the product must be physically shipped to the buyer. The logistics cost has two components:
+\begin{equation}
+    \kappa_i = \underbrace{\kappa^{\text{line-haul}}}_{\text{trunk transport}} + \underbrace{\kappa^{\text{last-mile}}_i}_{\text{local collection}}
+\end{equation}
+
+The line-haul cost $\kappa^{\text{line-haul}}$ is determined by the national courier network and is approximately constant across origins once goods reach the expressway. The last-mile cost $\kappa^{\text{last-mile}}_i$ depends on the distance from the producer to the nearest courier collection point, which in turn depends on expressway exit access:
+\begin{equation}
+    \kappa^{\text{last-mile}}_i =
+    \begin{cases}
+        \kappa_L & \text{if exit access (courier hub at exit)} \\
+        \kappa_H & \text{if no exit access}
+    \end{cases}
+    \quad \text{with } \kappa_H \gg \kappa_L.
+\end{equation}
+
+The platform channel is viable only if the margin exceeds the logistics cost:
+\begin{equation}\label{eq:viability}
+    v - c - \phi - \kappa_i > 0.
+\end{equation}
+
+When $\kappa_i = \kappa_H$ (no exit), condition~\eqref{eq:viability} may fail for many products, especially low-margin agricultural goods. When $\kappa_i = \kappa_L$ (exit access), the platform channel becomes viable.
+
+The producer's expected payoff from the platform channel, conditional on viability, is:
+\begin{equation}
+    V^P_i = v - c - \phi - \kappa_i.
+\end{equation}
+
+Note that the platform payoff does not depend on $\theta$---there is no bargaining, as the producer sets the price and the platform provides matching. This is the key structural difference from the middleman channel.
+
+\subsection{Channel Choice and Complementarity}
+
+A producer chooses the channel yielding higher payoff:
+\begin{equation}
+    V_i = \max\{V^M_i, \, V^P_i\}.
+\end{equation}
+
+\begin{proposition}[Ambiguous effect of expressway access alone]\label{prop:exit}
+Without e-commerce ($V^P_i$ not available), an expressway exit increases the middleman-channel surplus $S_i$ but the producer captures only $\theta \cdot \Delta S$. If $\theta$ is small and the exit simultaneously reduces the cost of outmigration, the net effect on local economic activity is ambiguous and may be negative.
+\end{proposition}
+
+\begin{proposition}[Limited effect of e-commerce alone]\label{prop:ecom}
+Without expressway exit access, $\kappa_i = \kappa_H$ is large, and the platform channel fails the viability condition~\eqref{eq:viability} for most products. E-commerce availability has little effect.
+\end{proposition}
+
+\begin{proposition}[Complementarity]\label{prop:complement}
+When both exit access and e-commerce are available, $\kappa_i = \kappa_L$ and the platform channel becomes viable. The producer switches from Channel M to Channel P, gaining:
+\begin{equation}
+    \Delta V_i = V^P_i - V^M_i = \underbrace{(1-\theta)(v - c - \tau_L)}_{\text{disintermediation gain}} - \underbrace{(\phi + \kappa_L - \theta \cdot \bar{u}_M)}_{\text{platform cost net of middleman outside option}} + \underbrace{\frac{r}{r + \lambda_M} \cdot \theta \cdot S_i}_{\text{eliminated search delay}}.
+\end{equation}
+The complementarity is strict:
+\begin{equation}
+    \frac{\partial^2 V_i}{\partial(\text{Exit}) \, \partial(\text{E\text{-}commerce})} > 0.
+\end{equation}
+\end{proposition}
+
+\subsection{Additional Predictions}
+
+The model generates several auxiliary predictions that I take to the data:
+
+\begin{prediction}[Disintermediation]\label{pred:disintermediation}
+In townships with both exit access and e-commerce, middleman activity (wholesale/trading firm registrations) declines while e-commerce and logistics firms increase.
+\end{prediction}
+
+\begin{prediction}[Heterogeneity by product standardization]\label{pred:standardization}
+The complementarity $\beta_3$ is larger for townships specializing in standardized agricultural products (fruits, tea, nuts) that are amenable to platform-based exchange, and smaller for non-standardized or bulk commodities where middlemen retain an efficiency advantage \citep{glode2020}.
+\end{prediction}
+
+\begin{prediction}[Heterogeneity by producer bargaining power]\label{pred:bargaining}
+The complementarity is larger where producers' initial bargaining power $\theta$ is lower---i.e., in more remote, smaller, and less commercially developed townships---because the disintermediation gain $(1-\theta) \cdot S$ is larger \citep{hendershott2015}.
+\end{prediction}
+
+\begin{prediction}[Spatial spillovers shift from negative to positive]\label{pred:spillover}
+Without e-commerce, exit access generates negative spillovers on neighboring townships (zero-sum reallocation). With e-commerce, exits become regional logistics hubs, and neighboring townships benefit from reduced last-mile costs, attenuating or reversing the negative spillover \citep{pagano1989}.
+\end{prediction}
+
+\begin{prediction}[Nonlinearity and tipping points]\label{pred:tipping}
+The complementarity effect exhibits increasing returns over time as the local e-commerce ecosystem matures: more sellers attract more courier capacity, reducing logistics costs, attracting more sellers---a liquidity externality analogous to \citet{pagano1989}.
+\end{prediction}
+
+
+%% ══════════════════════════════════════════════════════════════
+%% 4. DATA
+%% ══════════════════════════════════════════════════════════════
+\section{Data}\label{sec:data}
+
+I assemble a township-level panel covering 2012--2019 from multiple sources.
+
+\subsection{Expressway Exit Access}
+
+Expressway interchange locations and opening years come from the GIS Database for China's Surface Transport Network \citep{davis2025}. The database provides the universe of expressway interchanges with precise geographic coordinates and construction timelines. I define a township as having exit access in year $t$ if the centroid of its administrative boundary falls within 15 km of an operational interchange.\footnote{Results are robust to alternative distance thresholds of 10 km and 20 km.} I restrict the sample to townships without exit access as of 2012 to focus on new access events.
+
+\subsection{E-Commerce Demonstration County Policy}
+
+County-level demonstration designations and their effective years are obtained from the Ministry of Commerce policy documents, compiled by macrodatas.cn. I code $\text{DemoCounty}_{ct} = 1$ for county $c$ in all years $t$ at or after its designation year.
+
+\subsection{Outcome Variables}
+
+\paragraph{Nighttime lights.} Annual VIIRS nighttime lights composites (2012--2019) provide a consistent proxy for local economic activity. I compute the mean radiance within each township boundary and use $\log(1 + \text{NTL})$ as the primary outcome to accommodate zero values. Robustness checks use the inverse hyperbolic sine transformation.
+
+\paragraph{Population.} WorldPop gridded population estimates at 100-meter resolution are aggregated to township boundaries to construct annual population totals.
+
+\paragraph{Land cover.} Annual 30-meter land cover data from the China Land Cover Dataset allow me to track the share of each township's area classified as cropland, impervious surface (built-up area), and other categories. Cropland-to-impervious conversion proxies for land development associated with logistics facilities and commercial construction.
+
+\subsection{Mechanism Variables}
+
+\paragraph{Firm registrations.} Georeferenced firm registration records from the State Administration for Industry and Commerce (SAIC) provide the universe of registered enterprises with founding dates, industry codes, and addresses. I classify firms into: (i) traditional wholesale and retail trade (middleman proxies); (ii) e-commerce and information technology services; (iii) transportation, warehousing, and courier services (logistics proxies). Firm counts are aggregated to the township-year level.
+
+\paragraph{Logistics points-of-interest.} Commercial mapping services (Amap/Gaode, Baidu Maps) provide geocoded points-of-interest (POI) for courier service outlets (e.g., SF Express, ZTO Express), logistics parks, and parcel collection/drop-off stations. I compute the count and density of logistics POIs within each township boundary for available years.
+
+\paragraph{Agricultural wholesale prices.} The Ministry of Agriculture's National Agricultural Product Wholesale Market Price Information System reports daily wholesale prices for approximately 200 product categories across roughly 800 monitored markets. I match each market to the nearest county and compute two price-based measures: (i) the \textit{price gap} between the producing county's wholesale market and the national median price for the same product-date, as a proxy for intermediation costs; and (ii) the cross-market \textit{price dispersion} (coefficient of variation) for selected standardized products, as a measure of market integration.
+
+\subsection{Sample Construction}
+
+The unit of analysis is the township-year. I restrict the sample to rural towns (\textit{zhen}) and townships (\textit{xiang}), excluding urban subdistricts (\textit{jiedao}) to avoid aggregation bias from urban economic activity. After imposing the restriction that townships lack exit access as of 2012 and dropping observations with missing covariates, the sample comprises approximately 33,000 townships observed over 8 years ($T = 2012$--$2019$), yielding roughly 264,000 township-year observations.
+
+
+%% ══════════════════════════════════════════════════════════════
+%% 5. IDENTIFICATION STRATEGY
+%% ══════════════════════════════════════════════════════════════
+\section{Empirical Strategy}\label{sec:identification}
+
+\subsection{Main Specification: Triple-Difference}
+
+The main estimating equation is:
+\begin{equation}\label{eq:ddd}
+    Y_{ict} = \alpha_i + \delta_{ct} + \beta_1 \, \text{Exit}_{it} + \beta_3 \, (\text{Exit}_{it} \times \text{DemoCounty}_{ct}) + \varepsilon_{ict}
+\end{equation}
+where:
+\begin{itemize}[nosep]
+    \item $Y_{ict}$: outcome for township $i$ in county $c$ in year $t$;
+    \item $\alpha_i$: township fixed effects, absorbing all time-invariant township characteristics;
+    \item $\delta_{ct}$: county$\times$year fixed effects, absorbing all county-level time-varying shocks including the DemoCounty main effect and any county-level policy changes correlated with demonstration status;
+    \item $\text{Exit}_{it} = \mathbf{1}[\text{township } i \text{ has exit access by year } t]$;
+    \item $\text{DemoCounty}_{ct} = \mathbf{1}[\text{county } c \text{ is a demonstration county by year } t]$.
+\end{itemize}
+
+This is effectively a triple-difference estimator:
+\begin{equation}
+    \underbrace{\text{Exit vs.\ No Exit}}_{\text{1st difference}} \times \underbrace{\text{Demo vs.\ Non-Demo County}}_{\text{2nd difference}} \times \underbrace{\text{Post vs.\ Pre}}_{\text{3rd difference}}.
+\end{equation}
+
+\paragraph{Interpretation of parameters.}
+$\beta_1$ captures the effect of expressway exit access on townships in \textit{non-demonstration} counties---the ``roads alone'' effect. If $\beta_1 \leq 0$, expressway exits without e-commerce serve as ``exit ramps,'' facilitating outflow. $\beta_3$ is the core parameter of interest: it captures the \textit{additional} effect of exit access in demonstration counties relative to non-demonstration counties. $\beta_3 > 0$ indicates that e-commerce amplifies the returns to physical infrastructure---the ``roads to markets'' effect. The total effect of exit access in demonstration counties is $\beta_1 + \beta_3$.
+
+\subsection{Identifying Assumptions}
+
+The causal interpretation of $\beta_3$ requires the following parallel-trends assumption:
+
+\begin{quote}
+\textit{In the absence of the e-commerce demonstration policy, the difference in outcome trends between exit-gaining and non-exit townships would have been the same in eventually-designated demonstration counties as in non-demonstration counties.}
+\end{quote}
+
+This assumption is weaker than requiring parallel trends for either exit access or demonstration status alone, because all county-level confounders are absorbed by $\delta_{ct}$. The remaining threat is that \textit{within-county} exit placement interacts differently with \textit{county-level} demonstration status in a manner correlated with outcomes. I address this through several strategies:
+
+\paragraph{Pre-trend tests.} I estimate an interaction event study:
+\begin{equation}
+    Y_{ict} = \alpha_i + \delta_{ct} + \sum_{k \neq -1} \beta_{1,k} \, D^k_{it} + \sum_{k \neq -1} \beta_{3,k} \, (D^k_{it} \times \text{DemoCounty}_{ct}) + \varepsilon_{ict}
+\end{equation}
+where $D^k_{it} = \mathbf{1}[\text{event time} = k]$ relative to exit opening. The null of parallel pre-trends requires $\beta_{1,k} = 0$ and $\beta_{3,k} = 0$ for all $k < 0$.
+
+\paragraph{Instrumental variables.} To address endogenous exit placement, I construct two instruments for $\text{Exit}_{it}$: (i) proximity to China's 1962 National Defense Highway Network, a historical road plan driven by military rather than economic considerations; and (ii) a least-cost engineering path instrument based on terrain slope, curvature, and river crossings, which predicts the cost-minimizing route for expressway construction independent of local economic conditions. Following \citet{borusyak2023}, I implement a recentered IV design to account for the staggered nature of treatment timing.
+
+\paragraph{Robustness to staggered adoption.} Both exit access and demonstration status are staggered treatments, raising concerns about heterogeneous treatment effects and negative weighting in two-way fixed effects estimators \citep{dechaisemartin2020,sun2021}. I implement the \citet{callaway2021} estimator for the baseline exit effect and extend it to the interaction setting by estimating group-time average treatment effects separately for demonstration and non-demonstration counties.
+
+\subsection{Supplementary Specifications}
+
+\paragraph{Province$\times$year fixed effects.} To estimate the main effect of e-commerce policy ($\beta_2$), I estimate a less restrictive specification replacing county$\times$year with province$\times$year fixed effects:
+\begin{equation}
+    Y_{ipt} = \alpha_i + \delta_{pt} + \beta_1 \, \text{Exit}_{it} + \beta_2 \, \text{DemoCounty}_{ct} + \beta_3 \, (\text{Exit}_{it} \times \text{DemoCounty}_{ct}) + \varepsilon_{ipt}.
+\end{equation}
+
+\paragraph{Spatial spillovers.} To test Prediction~\ref{pred:spillover}, I augment the specification with a neighbor-exit indicator and its interaction with demonstration status:
+\begin{equation}
+    Y_{ict} = \alpha_i + \delta_{ct} + \beta_1 \, \text{Exit}_{it} + \beta_3 \, (\text{Exit}_{it} \times \text{Demo}_{ct}) + \gamma_1 \, \text{NbrExit}_{it} + \gamma_3 \, (\text{NbrExit}_{it} \times \text{Demo}_{ct}) + \varepsilon_{ict}.
+\end{equation}
+If $\gamma_1 < 0$ (negative spillover without e-commerce) and $\gamma_3 > 0$ (e-commerce attenuates or reverses the spillover), this supports the prediction that e-commerce transforms exit effects from zero-sum reallocation to positive-sum growth.
+
+\paragraph{Heterogeneity.} I test Predictions~\ref{pred:standardization}--\ref{pred:bargaining} through triple interactions:
+\begin{equation}
+    Y_{ict} = \alpha_i + \delta_{ct} + \beta_1 \, \text{Exit}_{it} + \beta_3 \, (\text{Exit}_{it} \times \text{Demo}_{ct}) + \beta_4 \, (\text{Exit}_{it} \times \text{Demo}_{ct} \times Z_i) + \ldots + \varepsilon_{ict}
+\end{equation}
+where $Z_i$ denotes a baseline township characteristic: agricultural product standardization potential, distance to the nearest prefecture, initial middleman density, or bank branch density.
+
+
+%% ══════════════════════════════════════════════════════════════
+%% 6. EXPECTED RESULTS AND MECHANISMS
+%% ══════════════════════════════════════════════════════════════
+\section{Expected Results and Mechanisms}\label{sec:results}
+
+\subsection{Baseline: The Average Effect of Expressway Exits}
+
+Preliminary estimates indicate that expressway exit access increases township-level nighttime lights by approximately 2.5--3\%, with no significant effect on population and a small positive effect on impervious surface share. The absence of population effects suggests that labor is not the primary margin of adjustment---consistent with exits affecting economic \textit{intensity} rather than \textit{scale}. However, I also find significant negative spatial spillovers on neighboring townships, suggesting that the baseline effect reflects within-county reallocation rather than net growth.
+
+\subsection{Core Result: The Complementarity}
+
+The central empirical exercise decomposes the baseline effect by e-commerce status. I expect:
+
+\begin{itemize}[nosep]
+    \item $\hat\beta_1 \approx 0$ or $< 0$: In non-demonstration counties, exit access has a null or negative effect---consistent with Proposition~\ref{prop:exit} and the ``roads out'' hypothesis.
+    \item $\hat\beta_3 > 0$: The interaction is positive and statistically significant---exit access generates substantially larger gains when combined with e-commerce penetration.
+    \item $\hat\beta_1 + \hat\beta_3 > 0$: The total effect in demonstration counties is positive and economically meaningful.
+\end{itemize}
+
+If this pattern holds, it implies that the modest baseline estimate of 2.5--3\% masks a mixture of a zero or negative effect (non-demonstration counties) and a larger positive effect (demonstration counties), confirming the complementarity.
+
+\subsection{Mechanism: Disintermediation}
+
+To test Prediction~\ref{pred:disintermediation}, I estimate equation~\eqref{eq:ddd} with firm-level outcomes:
+\begin{itemize}[nosep]
+    \item \textit{Wholesale/retail firm registrations} (middleman proxy): I expect $\beta_3 < 0$---e-commerce reduces middleman entry in exit-connected townships.
+    \item \textit{E-commerce and IT firm registrations}: I expect $\beta_3 > 0$---e-commerce increases platform-based firm entry.
+    \item \textit{Courier/logistics firm registrations and POI density}: I expect $\beta_3 > 0$---e-commerce drives logistics infrastructure build-out near exits.
+\end{itemize}
+
+\subsection{Mechanism: Price Convergence}
+
+Using agricultural wholesale price data, I test whether the price gap between producing counties and consuming markets narrows in demonstration counties with exit-connected townships. If the disintermediation mechanism operates as theorized, intermediary margins should compress, reducing the wedge between farmgate and retail prices.
+
+\subsection{Mechanism: Spatial Spillover Reversal}
+
+I test whether the negative spatial spillover documented in the baseline ($\gamma_1 < 0$) is attenuated or reversed in demonstration counties ($\gamma_3 > 0$). A reversal would indicate that e-commerce transforms exit effects from zero-sum spatial reallocation into positive-sum regional growth---consistent with the liquidity externality mechanism of \citet{pagano1989}.
+
+
+%% ══════════════════════════════════════════════════════════════
+%% 7. DISCUSSION
+%% ══════════════════════════════════════════════════════════════
+\section{Discussion}\label{sec:discussion}
+
+\subsection{Relation to the Financial Market Microstructure Literature}
+
+The analogy between rural commodity markets and OTC financial markets provides both theoretical structure and a set of auxiliary predictions. Traditional rural markets share the defining features of OTC markets as characterized by \citet{dgp2005}: bilateral search, opaque pricing, and intermediary rent extraction. E-commerce platforms share the defining features of centralized exchanges: multilateral matching, transparent posted prices, and compressed intermediary margins \citep{bessembinder2006,hendershott2015}.
+
+Two insights from the financial microstructure literature are particularly relevant. First, \citet{hendershott2015} find that the transition from OTC to electronic trading benefits \textit{small, unsophisticated traders} the most---precisely because they have the weakest bargaining position in bilateral negotiations. This maps directly to rural smallholders, who are the weakest participants in traditional intermediary-dominated supply chains. Second, \citet{glode2020} show that the optimal market structure depends on \textit{product standardization}: exchange-like structures dominate for standardized products, while OTC structures retain advantages for complex, bespoke transactions. This generates a testable heterogeneity prediction in my setting: the complementarity should be largest for standardized agricultural products amenable to online listing (fruits, tea, packaged goods) and smallest for products requiring physical inspection or customized negotiation (live animals, bulk grain sold under forward contracts).
+
+A crucial caveat from \citet{malamud2017} is that centralization is not always welfare-improving. I argue that the specific features of rural commodity markets---low producer bargaining power, information-based (rather than expertise-based) intermediary rents, and the availability of standardized product categories---make this a setting where the exchange structure dominates. The empirical heterogeneity tests (Predictions~\ref{pred:standardization}--\ref{pred:bargaining}) serve as checks on this argument.
+
+\subsection{Relation to the Development and Trade Literature}
+
+This paper speaks to several strands in development and trade. \citet{jensen2007} demonstrated that mobile phones improved market efficiency in Kerala's fishing industry by providing price information---a pure information shock in a setting where logistics (fishing boats) were already in place. My setting differs because rural producers face \textit{both} information and logistics frictions, and the key contribution is to show that resolving information frictions alone (e-commerce without logistics) is insufficient. \citet{couture2021} found that e-commerce entry into rural China primarily improved consumer welfare (downstream) with limited effects on producer-side (upstream) commerce. My framework suggests an explanation: the upstream effect depends on logistics infrastructure that was unavailable in many of their sample villages. The complementarity documented here implies that upstream effects emerge precisely where logistics constraints have been relaxed by expressway access.
+
+\citet{allen2014} and \citet{atkin2015} document the large role of intermediaries and trade costs in creating internal market fragmentation in developing countries. My paper extends this literature by showing that digital platforms can compress intermediary margins---but only when the physical infrastructure for platform-based trade (logistics nodes at expressway exits) is in place.
+
+\subsection{Policy Implications}
+
+The complementarity result carries direct policy implications. Infrastructure investment should be evaluated not in isolation but conditional on the market institutions it serves. A rural expressway exit embedded in a decentralized OTC market structure may yield low or negative returns, validating the ``white elephant'' critique. The same exit, embedded in a centralized platform-mediated market, may yield substantial returns. This implies that: (i) transport infrastructure investments in rural areas should be paired with policies that facilitate digital market access; (ii) e-commerce promotion policies should prioritize areas with existing or planned logistics connectivity; and (iii) the returns to historical infrastructure investments may be substantially revised upward as digital market penetration increases over time.
+
+
+%% ══════════════════════════════════════════════════════════════
+%% 8. CONCLUSION
+%% ══════════════════════════════════════════════════════════════
+\section{Conclusion}\label{sec:conclusion}
+
+This paper investigates whether the disappointing returns to rural expressway infrastructure in China can be explained by a missing complement: digital market access. I argue that traditional rural markets resemble OTC financial markets---bilateral, opaque, and intermediary-dominated---and that in this environment, reduced transport costs are captured by middlemen or channeled into outmigration. E-commerce platforms transform market structure from decentralized to centralized exchange, and expressway exits provide the physical logistics backbone that makes platform-based trade feasible. Neither is sufficient alone; their combination triggers a market structure transformation that converts expressway exits from exit ramps into two-way trade nodes.
+
+Using a triple-difference design that exploits staggered expressway exit openings, China's E-Commerce Demonstration County policy, and within-county variation across townships, I find evidence consistent with this complementarity. The research contributes a market microstructure perspective to the literature on infrastructure and development, offering both a theoretical framework for understanding why identical infrastructure yields heterogeneous returns across settings and granular empirical evidence on the mechanisms through which digital and physical connectivity jointly shape rural economic trajectories.
+
+\clearpage
+
+%% ══════════════════════════════════════════════════════════════
+%% REFERENCES
+%% ══════════════════════════════════════════════════════════════
+
+\begin{thebibliography}{99}
+\setlength{\parskip}{4pt}
+
+\bibitem[Allen(2014)]{allen2014}
+Allen, T. (2014). Information frictions in trade. \textit{Econometrica}, 82(6), 2041--2083.
+
+\bibitem[Antras \& Costinot(2011)]{antras2011}
+Antras, P., \& Costinot, A. (2011). Intermediated trade. \textit{Quarterly Journal of Economics}, 126(3), 1319--1374.
+
+\bibitem[Atkeson, Eisfeldt \& Weill(2015)]{atkeson2015}
+Atkeson, A.~G., Eisfeldt, A.~L., \& Weill, P.-O. (2015). Entry and exit in OTC derivatives markets. \textit{Econometrica}, 83(6), 2231--2292.
+
+\bibitem[Atkin \& Donaldson(2015)]{atkin2015}
+Atkin, D., \& Donaldson, D. (2015). Who's getting globalized? The size and implications of intra-national trade costs. Working paper, MIT.
+
+\bibitem[Atkin, Faber \& Gonzalez-Navarro(2018)]{atkin2018}
+Atkin, D., Faber, B., \& Gonzalez-Navarro, M. (2018). Retail globalization and household welfare: Evidence from Mexico. \textit{Journal of Political Economy}, 126(1), 1--73.
+
+\bibitem[Banerjee, Duflo \& Qian(2020)]{banerjee2020}
+Banerjee, A., Duflo, E., \& Qian, N. (2020). On the road: Access to transportation infrastructure and economic growth in China. \textit{Journal of Development Economics}, 145, 102442.
+
+\bibitem[Baum-Snow et al.(2020)]{baumsnow2020}
+Baum-Snow, N., Henderson, J.~V., Turner, M.~A., Zhang, Q., \& Brandt, L. (2020). Does investment in national highways help or hurt hinterland city growth? \textit{Journal of Urban Economics}, 115, 103124.
+
+\bibitem[Bessembinder, Maxwell \& Venkataraman(2006)]{bessembinder2006}
+Bessembinder, H., Maxwell, W., \& Venkataraman, K. (2006). Market transparency and the corporate bond market. \textit{Journal of Financial Economics}, 82(2), 251--288.
+
+\bibitem[Biais, Glosten \& Spatt(2005)]{biais2005}
+Biais, B., Glosten, L., \& Spatt, C. (2005). Market microstructure: A survey of microfoundations, empirical results, and policy implications. \textit{Journal of Financial Economics}, 73(2), 217--264.
+
+\bibitem[Borusyak \& Hull(2023)]{borusyak2023}
+Borusyak, K., \& Hull, P. (2023). Non-random exposure to exogenous shocks. \textit{Econometrica}, 91(6), 2155--2185.
+
+\bibitem[Callaway \& Sant'Anna(2021)]{callaway2021}
+Callaway, B., \& Sant'Anna, P.~H.~C. (2021). Difference-in-differences with multiple time periods. \textit{Journal of Econometrics}, 225(2), 200--230.
+
+\bibitem[Couture et al.(2021)]{couture2021}
+Couture, V., Faber, B., Gu, Y., \& Liu, L. (2021). Connecting the countryside via e-commerce: Evidence from China. \textit{American Economic Review: Insights}, 3(1), 35--50.
+
+\bibitem[Davis et al.(2025)]{davis2025}
+Davis, B., et al. (2025). GIS database for China's surface transport network. Working paper.
+
+\bibitem[de Chaisemartin \& D'Haultf\oe uille(2020)]{dechaisemartin2020}
+de Chaisemartin, C., \& D'Haultf\oe uille, X. (2020). Two-way fixed effects estimators with heterogeneous treatment effects. \textit{American Economic Review}, 110(9), 2964--2996.
+
+\bibitem[Donaldson(2018)]{donaldson2018}
+Donaldson, D. (2018). Railroads of the Raj: Estimating the impact of transportation infrastructure. \textit{American Economic Review}, 108(4-5), 899--934.
+
+\bibitem[Duffie, G\^arleanu \& Pedersen(2005)]{dgp2005}
+Duffie, D., G\^arleanu, N., \& Pedersen, L.~H. (2005). Over-the-counter markets. \textit{Econometrica}, 73(6), 1815--1847.
+
+\bibitem[Duffie, G\^arleanu \& Pedersen(2007)]{dgp2007}
+Duffie, D., G\^arleanu, N., \& Pedersen, L.~H. (2007). Valuation in over-the-counter markets. \textit{Review of Financial Studies}, 20(6), 1865--1900.
+
+\bibitem[Duffie \& Zhu(2011)]{duffie2011}
+Duffie, D., \& Zhu, H. (2011). Does a central clearing counterparty reduce counterparty risk? \textit{Review of Asset Pricing Studies}, 1(1), 74--95.
+
+\bibitem[Faber(2014)]{faber2014}
+Faber, B. (2014). Trade integration, market size, and industrialization: Evidence from China's National Trunk Highway System. \textit{Review of Economic Studies}, 81(3), 1046--1070.
+
+\bibitem[Glode \& Opp(2020)]{glode2020}
+Glode, V., \& Opp, C. (2020). Over-the-counter vs.\ limit-order markets: The role of traders' expertise. \textit{Review of Financial Studies}, 33(2), 866--915.
+
+\bibitem[Hendershott \& Madhavan(2015)]{hendershott2015}
+Hendershott, T., \& Madhavan, A. (2015). Click or call? Auction versus search in the over-the-counter market. \textit{Journal of Finance}, 70(1), 419--447.
+
+\bibitem[Jensen(2007)]{jensen2007}
+Jensen, R. (2007). The digital provide: Information (technology), market performance, and welfare in the South Indian fisheries sector. \textit{Quarterly Journal of Economics}, 122(3), 879--924.
+
+\bibitem[Lagos \& Rocheteau(2009)]{lagos2009}
+Lagos, R., \& Rocheteau, G. (2009). Liquidity in asset markets with search frictions. \textit{Econometrica}, 77(2), 403--426.
+
+\bibitem[Lewis(2011)]{lewis2011}
+Lewis, G. (2011). Asymmetric information, adverse selection and online disclosure: The case of eBay Motors. \textit{American Economic Review}, 101(4), 1535--1546.
+
+\bibitem[Madhavan(1995)]{madhavan1995}
+Madhavan, A. (1995). Consolidation, fragmentation, and the disclosure of trading information. \textit{Review of Financial Studies}, 8(3), 579--603.
+
+\bibitem[Malamud \& Rostek(2017)]{malamud2017}
+Malamud, S., \& Rostek, M. (2017). Decentralized exchange. \textit{American Economic Review}, 107(11), 3320--3362.
+
+\bibitem[Pagano(1989)]{pagano1989}
+Pagano, M. (1989). Trading volume and asset liquidity. \textit{Quarterly Journal of Economics}, 104(2), 255--274.
+
+\bibitem[Riggs et al.(2020)]{riggs2020}
+Riggs, L., Onur, E., Reiffen, D., \& Zhu, H. (2020). Swap trading after Dodd-Frank: Evidence from index CDS. \textit{Journal of Financial Economics}, 137(3), 857--886.
+
+\bibitem[Sun \& Abraham(2021)]{sun2021}
+Sun, L., \& Abraham, S. (2021). Estimating dynamic treatment effects in event studies with heterogeneous treatment effects. \textit{Journal of Econometrics}, 225(2), 175--199.
+
+\bibitem[Zhu(2012)]{zhu2012}
+Zhu, H. (2012). Do dark pools harm price discovery? \textit{Review of Financial Studies}, 25(3), 747--789.
+
+\end{thebibliography}
+
+\end{document}
