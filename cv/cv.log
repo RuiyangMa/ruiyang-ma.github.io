@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  13 APR 2026 13:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  13 APR 2026 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -498,13 +498,13 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 257.
+(Font)              <12> on input line 277.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 257.
+(Font)              <8> on input line 277.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 257.
+(Font)              <6> on input line 277.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 257.
+(Font)              scaled to size 8.0pt on input line 277.
  [2] (cv.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -514,11 +514,11 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16048 strings out of 467870
- 280887 string characters out of 5434709
- 757574 words of memory out of 5000000
+ 16063 strings out of 467870
+ 281319 string characters out of 5434709
+ 756574 words of memory out of 5000000
  44644 multiletter control sequences out of 15000+600000
- 702994 words of font info for 129 fonts, out of 8000000 for 9000
+ 704590 words of font info for 139 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,11n,79p,1001b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <D:/miketex/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><D:/miketex/fon
@@ -526,7 +526,7 @@ ts/type1/public/ebgaramond/EBGaramond-Italic.pfb><D:/miketex/fonts/type1/public
 /ebgaramond/EBGaramond-Regular.pfb><D:/miketex/fonts/type1/public/fontawesome5/
 FontAwesome5Free-Regular.pfb><D:/miketex/fonts/type1/public/fontawesome5/FontAw
 esome5Free-Solid.pfb>
-Output written on cv.pdf (2 pages, 103918 bytes).
+Output written on cv.pdf (2 pages, 105731 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  3 named destinations out of 1000 (max. 500000)
