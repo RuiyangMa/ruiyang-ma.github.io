@@ -75,14 +75,7 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ---
 
-### Paper 05
-- **Title:** Trade Credit as a Financial Overlay on Production Networks
-- **Status:** Work in Progress
-- **Coauthors:** Lucia Liuqing Wang
-- **Abstract:**
-  We identify a horizontal contagion mechanism through which idiosyncratic shocks propagate across economically unrelated firms. When an anchor customer suffers a downturn, their common supplier faces tightened working-capital constraints. Due to asymmetric bargaining power, the supplier extends forbearance to the distressed customer while extracting liquidity from unrelated peer customers by shortening payment terms and reducing credit limits. This horizontal transmission is orthogonal to the Leontief input-output matrix, constituting a novel financial overlay channel beyond standard network propagation. We provide three contributions: a methodological critique showing that empirical designs omitting network structure produce omitted-variable bias; identification of the horizontal contagion mechanism as a new propagation path; and evidence of state-dependent amplification, where the contagion intensifies during aggregate credit tightening when suppliers cannot substitute external financing. We validate each link in the causal chain using BEA industry-level input-output tables linked to firm-level data from Compustat and CRSP.
 
----
 
 ### Paper 04
 - **Title:** Pricing the Risk Lock-in: Financial Frictions, Endogenous Production Networks, and Corporate Bond Spreads
@@ -92,6 +85,15 @@ I study questions related to monetary transmission mechanisms, financial network
   This research proposes to investigate how financial frictions distort firm-level supply chain adjustments and the resulting credit risk pricing. We develop a theoretical framework to identify a "risk lock-in" mechanism, where firms facing financing constraints and fixed adjustment costs may be unable to reconfigure their supplier networks toward stability during periods of high uncertainty. The study examines how these constraints break the "flight-to-stability" motive, potentially creating a "volatility trap" that depresses firm productivity, and how the market prices this lack of flexibility, leading to a divergence in credit spreads between constrained and unconstrained firms.
 
 ---
+
+### Paper 05
+- **Title:** Trade Credit as a Financial Overlay on Production Networks
+- **Status:** Work in Progress
+- **Coauthors:** Lucia Liuqing Wang
+- **Abstract:**
+  We identify a horizontal contagion mechanism through which idiosyncratic shocks propagate across economically unrelated firms. When an anchor customer suffers a downturn, their common supplier faces tightened working-capital constraints. Due to asymmetric bargaining power, the supplier extends forbearance to the distressed customer while extracting liquidity from unrelated peer customers by shortening payment terms and reducing credit limits. This horizontal transmission is orthogonal to the Leontief input-output matrix, constituting a novel financial overlay channel beyond standard network propagation. We provide three contributions: a methodological critique showing that empirical designs omitting network structure produce omitted-variable bias; identification of the horizontal contagion mechanism as a new propagation path; and evidence of state-dependent amplification, where the contagion intensifies during aggregate credit tightening when suppliers cannot substitute external financing. We validate each link in the causal chain using BEA industry-level input-output tables linked to firm-level data from Compustat and CRSP.
+---
+
 
 ## 5. Education
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  13 APR 2026 13:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  13 APR 2026 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -487,12 +487,7 @@ LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 122.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 135.
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--178
-
- []
-
-[1
+ [1
 
 {C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/miketex/fo
 nts/enc/dvips/ebgaramond/ebg_tcdnmr.enc}{D:/miketex/fonts/enc/dvips/fontawesome
@@ -503,13 +498,13 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 256.
+(Font)              <12> on input line 257.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 256.
+(Font)              <8> on input line 257.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 256.
+(Font)              <6> on input line 257.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 256.
+(Font)              scaled to size 8.0pt on input line 257.
  [2] (cv.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -531,7 +526,7 @@ ts/type1/public/ebgaramond/EBGaramond-Italic.pfb><D:/miketex/fonts/type1/public
 /ebgaramond/EBGaramond-Regular.pfb><D:/miketex/fonts/type1/public/fontawesome5/
 FontAwesome5Free-Regular.pfb><D:/miketex/fonts/type1/public/fontawesome5/FontAw
 esome5Free-Solid.pfb>
-Output written on cv.pdf (2 pages, 103898 bytes).
+Output written on cv.pdf (2 pages, 103918 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  3 named destinations out of 1000 (max. 500000)
