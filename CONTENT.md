@@ -56,13 +56,14 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ---
 
-### Paper 02 *(hidden from website and CV — change to `display: yes` to restore)*
-- **Display:** no
-- **Title:** Decomposing Information Effects and Monetary Policy Shocks: An LLM Approach
+### Paper 02
+- **Display:** yes
+- **Title:** Identifying Macroeconomic Shocks from Analyst Beliefs: A Unified LLM Framework
 - **Status:** Work in Progress
 - **Coauthors:** Jing Cynthia Wu, Shihan Xie
+- **Source file:** `assets/story_v2.md`
 - **Abstract:**
-  Standard high-frequency identification of monetary policy shocks relies on aggregate financial prices, which reveal what expectations changed but not why. We develop an LLM-based extraction pipeline applied to sell-side analyst reports from major investment banks to directly observe individual-level forecasts and the causal reasoning behind them around FOMC announcements. This approach improves identification on two margins: a content-based decomposition that classifies monetary surprises by the economic mechanisms analysts attribute to each event, and a belief-distribution dimension that captures cross-analyst disagreement in both forecasts and causal models. We show that monetary surprises of the same size produce heterogeneous macroeconomic effects depending on their perceived cause — distinguishing inflation-driven from growth-driven interpretations — and that consensus events produce cleaner, more predictable impulse responses than contested ones. Our content-based classification complements and extends statistical decomposition methods (Acosta 2023; Jarocinski and Karadi 2020) by providing directly observed causal evidence rather than inferred shock categories.
+  Traditional macroeconomic shock identification relies on a small number of financial series — interest rate futures, treasury yields, stock returns — which reveal what expectations changed but not why. We develop a unified framework that extracts structured beliefs from sell-side analyst reports to identify macroeconomic shocks across types, including monetary policy, fiscal policy, oil and energy, supply chain, and regulatory shocks. The framework produces a three-layer output: analyst-level forecasts, attribution fractions capturing how much of each forecast revision is attributed to each shock type, and aggregated causal effects derived from their product. This approach improves on existing methods in three dimensions: it provides content-based identification based on directly observed causal reasoning rather than statistical assumptions; it captures cross-analyst heterogeneity in both forecasts and attribution; and it applies consistently across shock types within a single pipeline, avoiding the fragmentation of existing shock-specific identification strategies. We show that shocks of the same aggregate size produce heterogeneous macroeconomic effects depending on their perceived cause, and that analyst disagreement in attribution predicts larger forecast errors and more dispersed impulse responses.
 
 ---
 
@@ -170,4 +171,5 @@ I study questions related to monetary transmission mechanisms, financial network
 | 2026-04-13 | Paper 02 restored to website and CV |
 | 2026-04-13 | Paper 02 hidden again from website and CV |
 | 2026-04-29 | Paper 01 upgraded to Working Paper, PDF added (assets/paper01.pdf) |
+| 2026-04-29 | Paper 02 title/abstract updated to v2 story, restored to website and CV |
 | 2026-04-13 | Added Paper 06 (Roads to Where) to CONTENT.md, hidden |
