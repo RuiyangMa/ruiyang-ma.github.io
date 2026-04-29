@@ -47,7 +47,8 @@ I study questions related to monetary transmission mechanisms, financial network
 
 ### Paper 01
 - **Title:** The Financial Reallocation Channel of Monetary Policy
-- **Status:** Work in Progress
+- **Status:** Working Paper
+- **PDF:** `assets/paper01.pdf`
 - **Coauthors:** Junze Lin
 - **Abstract:**
  We propose a financial reallocation channel for the transmission of monetary policy. We show that in an economy where banks are linked through an inter-dependency network with value-dissipation frictions, monetary easing endogenously shifts the cross-bank composition of credit, and this compositional shift has first-order macroeconomic effects. Because network-peripheral banks exhibit stronger value feedback, easing reallocates credit toward them, simultaneously boosting aggregate demand and lowering marginal cost. Consequently, the reallocation channel reinforces the output response while dampening inflation. We derive a tractable augmented New Keynesian system in which network-weighted effective market shares govern how credit composition maps into output and inflation. The model implies that quantitative easing activates this channel more fully than interest rate policy, and that monetary transmission is state-dependent: past policy reshapes the credit distribution and alters future transmission.
@@ -168,4 +169,5 @@ I study questions related to monetary transmission mechanisms, financial network
 | 2026-04-13 | Updated Paper 02 abstract based on project story |
 | 2026-04-13 | Paper 02 restored to website and CV |
 | 2026-04-13 | Paper 02 hidden again from website and CV |
+| 2026-04-29 | Paper 01 upgraded to Working Paper, PDF added (assets/paper01.pdf) |
 | 2026-04-13 | Added Paper 06 (Roads to Where) to CONTENT.md, hidden |
