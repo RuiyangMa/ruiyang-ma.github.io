@@ -1,3 +1,9 @@
 .specstory/
 *.DS_Store
 Thumbs.db
+
+# Private files — do not commit
+assets/main.pdf
+projects/动态金融网络.md
+ChatGPT Image*.png
+ChatGPT Image*.jpg
