@@ -46,12 +46,12 @@ I study questions related to monetary transmission mechanisms, financial network
 ## 4. Working Papers
 
 ### Paper 01
-- **Title:** The Financial Reallocation Channel of Monetary Policy
+- **Title:** Financial Networks, Credit Reallocation, and Monetary Transmission
 - **Status:** Working Paper
 - **PDF:** `assets/paper01.pdf`
 - **Coauthors:** Junze Lin
 - **Abstract:**
- We propose a financial reallocation channel for the transmission of monetary policy. We show that in an economy where banks are linked through an inter-dependency network with value-dissipation frictions, monetary easing endogenously shifts the cross-bank composition of credit, and this compositional shift has first-order macroeconomic effects. Because network-peripheral banks exhibit stronger value feedback, easing reallocates credit toward them, simultaneously boosting aggregate demand and lowering marginal cost. Consequently, the reallocation channel reinforces the output response while dampening inflation. We derive a tractable augmented New Keynesian system in which network-weighted effective market shares govern how credit composition maps into output and inflation. The model implies that quantitative easing activates this channel more fully than interest rate policy, and that monetary transmission is state-dependent: past policy reshapes the credit distribution and alters future transmission.
+  Monetary policy transmission depends not only on how much bank credit expands, but on where in the financial network that expansion occurs. We embed interconnected banks into a New Keynesian model and show that policy-induced credit reallocation changes the output-inflation composition of monetary transmission. The key object is an effective network weight, which measures how much each bank's lending moves aggregate financial capacity after valuation feedback propagates through the network. When easing shifts credit toward banks with high effective weights, the same aggregate credit expansion generates larger real effects for a given inflation response. The mechanism also implies stronger network amplification for quantitative easing than for conventional rate policy, because QE loads more directly on bank balance sheets. Finally, past accommodation leaves inherited financial wedges that shape future transmission. The results show that financial networks matter for routine monetary policy, not only for crisis propagation.
 
 
 ---
