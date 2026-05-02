@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  29 APR 2026 01:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.23)  2 MAY 2026 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -487,7 +487,12 @@ LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 122.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 135.
- [1
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--156
+
+ []
+
+[1
 
 {C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/miketex/fo
 nts/enc/dvips/ebgaramond/ebg_tcdnmr.enc}{D:/miketex/fonts/enc/dvips/fontawesome
@@ -498,14 +503,15 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 280.
+(Font)              <12> on input line 277.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 280.
+(Font)              <8> on input line 277.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 280.
+(Font)              <6> on input line 277.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 280.
- [2] [3] (cv.aux)
+(Font)              scaled to size 8.0pt on input line 277.
+ [2] [3]
+(cv.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -520,13 +526,13 @@ Here is how much of TeX's memory you used:
  44644 multiletter control sequences out of 15000+600000
  703578 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1001b,687s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,1001b,685s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <D:/miketex/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb><D:/miketex/fon
 ts/type1/public/ebgaramond/EBGaramond-Italic.pfb><D:/miketex/fonts/type1/public
 /ebgaramond/EBGaramond-Regular.pfb><D:/miketex/fonts/type1/public/fontawesome5/
 FontAwesome5Free-Regular.pfb><D:/miketex/fonts/type1/public/fontawesome5/FontAw
 esome5Free-Solid.pfb>
-Output written on cv.pdf (3 pages, 106440 bytes).
+Output written on cv.pdf (3 pages, 105995 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  4 named destinations out of 1000 (max. 500000)

@@ -46,12 +46,12 @@ I study questions related to monetary transmission mechanisms, financial network
 ## 4. Working Papers
 
 ### Paper 01
-- **Title:** Financial Networks, Credit Reallocation, and Monetary Transmission
+- **Title:** Banking Networks and the Financial Reallocation Channel of Monetary Policy
 - **Status:** Working Paper
 - **PDF:** `assets/paper01.pdf`
-- **Coauthors:** Junze Lin
+- **Coauthors:** *(solo)*
 - **Abstract:**
-  Monetary policy transmission depends not only on how much bank credit expands, but on where in the financial network that expansion occurs. We embed interconnected banks into a New Keynesian model and show that policy-induced credit reallocation changes the output-inflation composition of monetary transmission. The key object is an effective network weight, which measures how much each bank's lending moves aggregate financial capacity after valuation feedback propagates through the network. When easing shifts credit toward banks with high effective weights, the same aggregate credit expansion generates larger real effects for a given inflation response. The mechanism also implies stronger network amplification for quantitative easing than for conventional rate policy, because QE loads more directly on bank balance sheets. Finally, past accommodation leaves inherited financial wedges that shape future transmission. The results show that financial networks matter for routine monetary policy, not only for crisis propagation.
+  This paper studies the role of the banking network in determining the transmission of monetary policy. In an otherwise standard New Keynesian model, credit is supplied by interconnected banks whose market values are linked through cross-holdings. Monetary expansion reallocates credit toward banks whose lending responds most to policy, because their own lending feeds back most strongly into their market value. Whether this reallocation amplifies or dampens monetary transmission depends on whether the responsive banks are also systemically important. A bank is systemically important in this sense when its lending has large spillovers on other banks' ability to lend. The aggregate effect of monetary policy therefore depends on the alignment between which banks respond and which banks matter, a property of the financial network. This alignment can be summarized in a single cross-sectional covariance.
 
 
 ---
@@ -172,4 +172,5 @@ I study questions related to monetary transmission mechanisms, financial network
 | 2026-04-13 | Paper 02 hidden again from website and CV |
 | 2026-04-29 | Paper 01 upgraded to Working Paper, PDF added (assets/paper01.pdf) |
 | 2026-04-29 | Paper 02 title/abstract updated to v2 story, restored to website and CV |
+| 2026-05-02 | Paper 01 new draft: solo author, updated title and abstract |
 | 2026-04-13 | Added Paper 06 (Roads to Where) to CONTENT.md, hidden |
