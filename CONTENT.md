@@ -80,11 +80,12 @@ I study questions related to monetary transmission mechanisms, financial network
 
 
 ### Paper 04
-- **Title:** Pricing the Risk Lock-in: Financial Frictions, Endogenous Production Networks, and Corporate Bond Spreads
+- **Title:** Production Networks, Supplier Financing, and Green Supply Chain Rewiring
 - **Status:** Work in Progress
 - **Coauthors:** Shaoqing Pan, Rong Yuwen
+- **Source file:** `assets/proposal_green_supply_chain_epu.md`
 - **Abstract:**
-  This research proposes to investigate how financial frictions distort firm-level supply chain adjustments and the resulting credit risk pricing. We develop a theoretical framework to identify a "risk lock-in" mechanism, where firms facing financing constraints and fixed adjustment costs may be unable to reconfigure their supplier networks toward stability during periods of high uncertainty. The study examines how these constraints break the "flight-to-stability" motive, potentially creating a "volatility trap" that depresses firm productivity, and how the market prices this lack of flexibility, leading to a divergence in credit spreads between constrained and unconstrained firms.
+  We study how production networks and supplier financing shape firms' green supply-chain responses to environmental policy uncertainty. Building on the idea that carbon risk is transmitted through production networks, we distinguish firms' direct carbon exposure from network-based transition pressure. Using earnings-call transcripts and large language models, we construct firm-quarter measures of green supply-chain discussion, action, and credible implementation. We find that increases in environmental policy uncertainty make network-brown firms more likely to discuss green supply-chain strategies, but firms that rely heavily on supplier financing are significantly less likely to translate such discussion into concrete actions. This creates a widening gap between green supply-chain talk and action among firms facing high network pressure and high financing frictions. Using firm-to-firm supplier data, we show that text-based green supply-chain actions predict subsequent network rewiring: firms add greener suppliers, exit browner supplier relationships, and reduce supply-chain carbon exposure. These real adjustments are muted among firms dependent on payables and working capital financing, especially when supplier networks are concentrated or alternative green suppliers are scarce.
 
 ---
 
@@ -173,4 +174,5 @@ I study questions related to monetary transmission mechanisms, financial network
 | 2026-04-29 | Paper 01 upgraded to Working Paper, PDF added (assets/paper01.pdf) |
 | 2026-04-29 | Paper 02 title/abstract updated to v2 story, restored to website and CV |
 | 2026-05-02 | Paper 01 new draft: solo author, updated title and abstract |
+| 2026-05-02 | Paper 04 new story: green supply chain rewiring, updated title and abstract |
 | 2026-04-13 | Added Paper 06 (Roads to Where) to CONTENT.md, hidden |
